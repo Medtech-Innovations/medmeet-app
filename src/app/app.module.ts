@@ -6,16 +6,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
-// Components
-import { LoginComponent } from './authentication/pages/login/login.component';
-import { RegisterComponent } from './authentication/pages/register/register.component';
-
 // Angular Material Design
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+
+// Components
+import { LoginComponent } from './authentication/pages/login/login.component';
+import { RegisterComponent } from './authentication/pages/register/register.component';
 import { ForgotPasswordComponent } from './authentication/pages/forgot-password/forgot-password.component';
 import { UserProfileComponent } from './authentication/pages/user-profile/user-profile.component';
 import { GreetingContentComponent } from './shared/pages/greeting-content/greeting-content.component';
