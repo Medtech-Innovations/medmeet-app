@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Natalia Gómez",
+      "isRecruiter": true,
+      "subTitle": "ACME Studios",
+      "email": "natalia_gomez@mail.com",
+      "password": "super-secure123",
+      "phoneNumber": 99900066,
+      "profileImageUrl": "https://im.idiva.com/content/2016/Feb/girl_woman_working_career1.jpg",
+      "subscribedToNewsLetter": false
+    }
+  ]
+}
