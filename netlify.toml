@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/anglify"
+  publish = "dist/medmeet-app"
   command = "ng build --prod"
 [[redirects]]
   from = "/*"
