@@ -1,29 +1,46 @@
 <main class="register">
+  <div class="flex float-right">
+    <app-language-switcher></app-language-switcher>
+  </div>
   <div class="w-full max-w-4xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
     <div class="bg-white shadow-md rounded px-8 py-8 flex flex-col space-y-2">
       <div class="grid place-items-center space-y-4">
         <a [routerLink]="['/login']"><img class="h-8" src="./assets/logo-medmeet.png" alt="Medmeet Logo"></a>
-        <h1 class="text-black font-medium text-3xl">Sign Up</h1>
+        <h1 class="text-black font-medium text-3xl">
+          {{ "auth.sign-up-title" | translate }}
+        </h1>
       </div>
-      <form class="mt-4" (ngSubmit)="onSubmit()">
+      <form class="mt-4"
+      (ngSubmit)="onSubmit()"
+      #loginForm="ngForm">
         <mat-tab-group>
           <!-- Patients Sign Up -->
-          <mat-tab label="I'm a Patient">
+          <mat-tab
+          label="{{ 'auth.register.im-patient-title' | translate }}">
           </mat-tab>
           <!-- Doctors Sign Up -->
-          <mat-tab label="I'm a Doctor">
+          <mat-tab
+          label="{{ 'auth.register.im-doctor-title' | translate }}">
             <div class="grid space-y-4">
-              <h1 class="font-medium text-3xl text-primary">Doctor practice proof</h1>
-              <p>Please provide documents to prove you are a legitimate doctor practitioner. We will verify them as soon as we can.</p>
+              <h1 class="font-medium text-3xl text-primary">
+                {{ "auth.register.doctor-practice-proof-title" | translate }}
+              </h1>
+              <p>
+                {{ "auth.register.doctor-practice-proof-description" | translate }}
+              </p>
               <div class="flex md:grid-cols-2 space-x-4">
                 <mat-form-field appearance="fill" class="w-full">
-                  <mat-label>Specialty</mat-label>
+                  <mat-label>
+                    {{ "auth.register.specialty-label" | translate }}
+                  </mat-label>
                   <mat-select>
                     <mat-option value="one">In progress</mat-option>
                   </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="fill" class="w-full">
-                  <mat-label>Doctor Permit ID</mat-label>
+                  <mat-label>
+                    {{ "auth.register.doctor-permit-id-label" | translate }}
+                  </mat-label>
                   <input matInput>
                 </mat-form-field>
               </div>
@@ -32,21 +49,29 @@
         </mat-tab-group>
         <div class="flex grid-cols-2 space-x-4">
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Legal First Name</mat-label>
+            <mat-label>
+              {{ "auth.register.legal-first-name-label" | translate }}
+            </mat-label>
             <input matInput>
           </mat-form-field>
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Legal Last Name</mat-label>
+            <mat-label>
+              {{ "auth.register.legal-last-name-label" | translate }}
+            </mat-label>
             <input matInput>
           </mat-form-field>
         </div>
         <div class="flex grid-cols-2 space-x-4">
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>E-mail</mat-label>
+            <mat-label>
+              {{ "auth.e-mail" | translate }}
+            </mat-label>
             <input matInput>
           </mat-form-field>
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Password</mat-label>
+            <mat-label>
+              {{ "auth.password" | translate }}
+            </mat-label>
             <input matInput [type]="hide ? 'password' : 'text'">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -55,44 +80,76 @@
         </div>
         <div class="flex grid-cols-3 space-x-4">
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Legal ID Card Number</mat-label>
+            <mat-label>
+              {{ "auth.register.legal-id-card-number-label" | translate }}
+            </mat-label>
             <input matInput>
           </mat-form-field>
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Birthdate</mat-label>
+            <mat-label>
+              {{ "auth.register.birthdate-label" | translate }}
+            </mat-label>
             <input matInput [matDatepicker]="picker">
-            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-hint>
+              {{ "auth.register.birthdate-hint-label" | translate }}
+            </mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
           <div>
-            <mat-label>Birth Gender</mat-label>
+            <mat-label>
+              {{ "auth.register.birth-gender-label" | translate }}
+            </mat-label>
             <mat-radio-group aria-label="Select an option" class="flex grid-cols-2">
-              <mat-radio-button value="1">Male</mat-radio-button>
-              <mat-radio-button value="2">Female</mat-radio-button>
+              <mat-radio-button value="1">
+                {{ "auth.register.male-option" | translate }}
+              </mat-radio-button>
+              <mat-radio-button value="2">
+                {{ "auth.register.female-option" | translate }}
+              </mat-radio-button>
             </mat-radio-group>
           </div>
         </div>
         <div class="flex md:grid-cols-3 space-x-4">
           <app-country-selector></app-country-selector>
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Phone Number</mat-label>
+            <mat-label>
+              {{ "auth.register.phone-number-label" | translate }}
+            </mat-label>
             <input matInput>
           </mat-form-field>
           <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Address</mat-label>
+            <mat-label>
+              {{ "auth.register.address-label" | translate }}
+            </mat-label>
             <input matInput>
           </mat-form-field>
         </div>
         <div class="grid md:grid-rows-2 place-items-center">
-          <mat-checkbox>I have read and agree to the <a class="text-secondary" href="#" target=”_blank”>Privacy Policy</a></mat-checkbox>
-          <mat-checkbox>I want to receive news from Medmeet via E-mail</mat-checkbox>
+          <mat-checkbox>
+            {{ "auth.register.agree-description" | translate }}
+            <a class="text-secondary" href="#" target=”_blank”>
+              {{ "auth.register.privay-policy" | translate }}
+            </a>
+          </mat-checkbox>
+          <mat-checkbox>
+            {{ "auth.register.receive-news" | translate }}
+          </mat-checkbox>
         </div>
-        <button mat-raised-button color="primary" type="submit" class="w-full">Sign Up</button>
+        <button mat-raised-button color="primary" type="submit" class="w-full">
+          {{ "auth.sign-up-title" | translate }}
+        </button>
       </form>
       <div class="grid place-items-center">
-        <p class="text-secondary"><a class="hover:cursor-pointer" href="#">Forgot Password?</a></p>
-        <p>Go back to <a class="hover:cursor-pointer text-secondary" [routerLink]="['/login']">Log in</a></p>
+        <p class="text-secondary"><a class="hover:cursor-pointer" href="#">
+          {{ "auth.forgot-password-question" | translate }}
+        </a></p>
+        <p>
+          {{ "auth.go-back-to" | translate }}
+          <a class="hover:cursor-pointer text-secondary" [routerLink]="['/login']">
+            {{ "auth.sign-in-title" | translate }}
+          </a>
+        </p>
       </div>
     </div>
   </div>

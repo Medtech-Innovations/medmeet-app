@@ -1,10 +1,33 @@
 {
   "auth": {
     "sign-in-title": "Log In",
+    "sign-up-title": "Register",
+    "log-out-title": "Log Out",
     "e-mail": "E-mail",
     "password": "Password",
     "forgot-password-question": "Forgot Password?",
     "dont-have-account-question": "Don't have an account? ",
-    "sign-up-title": "Register"
+    "go-back-to": "Go back to ",
+    "register": {
+      "im-doctor-title": "I'm doctor",
+      "im-patient-title": "I'm patient",
+      "doctor-practice-proof-title": "Doctor practice proof",
+      "doctor-practice-proof-description": "Please provide documents to prove you are a legitimate doctor practitioner. We will verify them as soon as we can.",
+      "specialty-label": "Specialty",
+      "doctor-permit-id-label": "Doctor Permit ID",
+      "legal-first-name-label": "Legal First Name",
+      "legal-last-name-label": "Legal Last Name",
+      "legal-id-card-number-label": "Legal ID Card Number",
+      "birthdate-label": "Birthdate",
+      "birthdate-hint-label": "MM/DD/YYYY",
+      "birth-gender-label": "Birth Gender",
+      "male-option": "Male",
+      "female-option": "Female",
+      "phone-number-label": "Phone Number",
+      "address-label": "Address",
+      "agree-description": "I have read and agree to the ",
+      "privacy-policy": "Privay Policy",
+      "receive-news": "I want to receive news from Medmeet via E-mail"
+    }
   }
 }
