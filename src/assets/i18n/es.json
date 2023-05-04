@@ -1,10 +1,33 @@
 {
   "auth": {
     "sign-in-title": "Inicio de sesión",
+    "sign-up-title": "Registro",
+    "log-out-title": "Cerrar sesión",
     "e-mail": "Correo",
     "password": "Contraseña",
     "forgot-password-question": "¿Olvidaste tu contraseña?",
     "dont-have-account-question": "¿No tienes cuenta? ",
-    "sign-up-title": "Registro"
+    "go-back-to": "Volver a ",
+    "register": {
+      "im-doctor-title": "Soy doctor",
+      "im-patient-title": "Soy paciente",
+      "doctor-practice-proof-title": "Documentos médicos",
+      "doctor-practice-proof-description": "Necesitamos algunos datos para verificar que usted es un doctor legítimos. Los revisaremos lo más pronto posible.",
+      "specialty-label": "Especialidad",
+      "doctor-permit-id-label": "Permiso médico",
+      "legal-first-name-label": "Nombres legales",
+      "legal-last-name-label": "Apellidos legales",
+      "legal-id-card-number-label": "DNI o carné de identidad",
+      "birthdate-label": "Fecha de nacimiento",
+      "birthdate-hint-label": "MM/DD/AAAA",
+      "birth-gender-label": "Sexo biológico",
+      "male-option": "Masculino",
+      "female-option": "Femenino",
+      "phone-number-label": "Número de contacto",
+      "address-label": "Dirección",
+      "agree-description": "He leído y estoy de acuerdo con las ",
+      "privacy-policy": "Políticas de privacidad",
+      "receive-news": "Deseo suscribirme al correo de Medmeet"
+    }
   }
 }
