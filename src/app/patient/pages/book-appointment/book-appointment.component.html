@@ -1,1 +1,89 @@
-<p>book-appointment works!</p>
+<main class="book-appointment">
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Select a doctor</ng-template>
+
+        <div class="filters space-y-2">
+          <h1 class="text-primary font-medium">Filters</h1>
+          <div class="flex space-x-6">
+            <mat-form-field appearance="fill">
+              <mat-label>
+                {{ "auth.register.specialty-label" | translate }}
+              </mat-label>
+              <mat-select>
+                <mat-option value="one">In progress</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Search by doctor</mat-label>
+              <input matInput type="text">
+              <button mat-button matSuffix>
+                <mat-icon>search</mat-icon>
+              </button>
+            </mat-form-field>
+            <app-country-selector>
+            </app-country-selector>
+            <mat-form-field appearance="fill">
+              <mat-label>Enter a date range</mat-label>
+              <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate placeholder="Start date">
+                <input matEndDate placeholder="End date">
+              </mat-date-range-input>
+              <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>
+                Patient
+              </mat-label>
+              <mat-select>
+                <mat-option value="one">Myself</mat-option>
+                <mat-option value="one">My child</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="filters space-y-2">
+          <h1 class="text-primary font-medium">Select your doctor</h1>
+
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Select date">
+      <form [formGroup]="secondFormGroup">
+        <div class="max-w-md">
+          <mat-card class="demo-inline-calendar-card">
+            <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+          </mat-card>
+          <p>Selected date: {{selectedDate}}</p>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup" label="Select payment">
+      <form [formGroup]="thirdFormGroup">
+        <h1 class="text-primary font-medium">Payment</h1>
+        <p>Building...</p>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Confirm</ng-template>
+      <p>Your appointment has been booked! Go to Home</p>
+      <div>
+
+        <button mat-button matStepperPrevious>Back</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</main>

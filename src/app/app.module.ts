@@ -5,7 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 export function HttpLoaderFactory(http: HttpClient){
@@ -13,6 +13,7 @@ export function HttpLoaderFactory(http: HttpClient){
 }
 
 // Angular Material Design
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -31,6 +32,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatCardModule } from '@angular/material/card';
 
 // Components
 import { LoginComponent } from './authentication/pages/login/login.component';
@@ -94,7 +97,10 @@ import { LanguageSwitcherComponent } from './shared/pages/language-switcher/lang
     MatProgressBarModule,
     MatNativeDateModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatStepperModule,
+    MatCardModule,
+    ReactiveFormsModule,
   ],
   providers: [
 
