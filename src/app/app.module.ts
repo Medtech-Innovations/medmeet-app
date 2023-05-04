@@ -34,7 +34,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
-import { NgxMatDatetimePickerModule, NgxMatTimepickerModule, NgxMatNativeDateModule } from '@angular-material-components/datetime-picker';
 
 // Components
 import { LoginComponent } from './authentication/pages/login/login.component';
@@ -101,10 +100,7 @@ import { LanguageSwitcherComponent } from './shared/pages/language-switcher/lang
     MatMenuModule,
     MatStepperModule,
     MatCardModule,
-    NgxMatTimepickerModule,
     ReactiveFormsModule,
-    NgxMatDatetimePickerModule,
-    NgxMatNativeDateModule,
   ],
   providers: [
 
