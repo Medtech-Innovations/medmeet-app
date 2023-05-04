@@ -1,0 +1,14 @@
+<div class="language-selector">
+  <button mat-fab color="primary" [matMenuTriggerFor]="menu">
+    <mat-icon>language</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <mat-list>
+      <mat-list-item
+      *ngFor="let language of languages"
+      (click)="onLanguageSelected(language)">
+        <button mat-button [matMenuTriggerFor]="menu">{{ language }}</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-menu>
+</div>
