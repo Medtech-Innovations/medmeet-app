@@ -37,6 +37,7 @@ import { PaymentProfileComponent } from './payment/pages/payment-profile/payment
 import { DashboardDoctorComponent } from './doctor/pages/dashboard-doctor/dashboard-doctor.component';
 import { DashboardPatientComponent } from './patient/pages/dashboard-patient/dashboard-patient.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
