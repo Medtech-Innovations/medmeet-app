@@ -47,7 +47,6 @@ import { CountrySelectorComponent } from './shared/pages/country-selector/countr
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguageSwitcherComponent } from './shared/pages/language-switcher/language-switcher.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
