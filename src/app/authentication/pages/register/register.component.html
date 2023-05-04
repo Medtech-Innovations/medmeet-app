@@ -1,26 +1,25 @@
 <main class="register">
   <div class="w-full max-w-4xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-    <form class="bg-white shadow-md rounded px-8 py-8 flex flex-col space-y-2" (ngSubmit)="onSubmit()">
+    <div class="bg-white shadow-md rounded px-8 py-8 flex flex-col space-y-2">
       <div class="grid place-items-center space-y-4">
         <img class="h-8" src="./assets/logo-medmeet.png">
         <h1 class="text-black font-medium text-3xl">Sign Up</h1>
       </div>
-      <mat-tab-group>
-        <!-- Patients Sign Up -->
-        <mat-tab label="I'm a Patient">
-        </mat-tab>
-        <!-- Doctors Sign Up -->
-        <mat-tab label="I'm a Doctor">
-          <div class="grid space-y-4">
-            <h1 class="font-medium text-3xl text-primary">Doctor practice proof</h1>
-            <p>Please provide documents to prove you are a legitimate doctor practitioner. We will verify them as soon as we can.</p>
-            <form class="mt-4">
-              <div class="flex grid-cols-2 space-x-4">
+      <form class="mt-4" (ngSubmit)="onSubmit()">
+        <mat-tab-group>
+          <!-- Patients Sign Up -->
+          <mat-tab label="I'm a Patient">
+          </mat-tab>
+          <!-- Doctors Sign Up -->
+          <mat-tab label="I'm a Doctor">
+            <div class="grid space-y-4">
+              <h1 class="font-medium text-3xl text-primary">Doctor practice proof</h1>
+              <p>Please provide documents to prove you are a legitimate doctor practitioner. We will verify them as soon as we can.</p>
+              <div class="flex md:grid-cols-2 space-x-4">
                 <mat-form-field appearance="fill" class="w-full">
                   <mat-label>Specialty</mat-label>
                   <mat-select>
-                    <mat-option value="one">First option</mat-option>
-                    <mat-option value="two">Second option</mat-option>
+                    <mat-option value="one">In progress</mat-option>
                   </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="fill" class="w-full">
@@ -28,11 +27,9 @@
                   <input matInput>
                 </mat-form-field>
               </div>
-            </form>
-          </div>
-        </mat-tab>
-      </mat-tab-group>
-      <form class="mt-4">
+            </div>
+          </mat-tab>
+        </mat-tab-group>
         <div class="flex grid-cols-2 space-x-4">
           <mat-form-field appearance="fill" class="w-full">
             <mat-label>Legal First Name</mat-label>
@@ -56,31 +53,28 @@
             </button>
           </mat-form-field>
         </div>
-        <div class="flex grid-cols-2 space-x-4">
+        <div class="flex grid-cols-3 space-x-4">
           <mat-form-field appearance="fill" class="w-full">
             <mat-label>Legal ID Card Number</mat-label>
             <input matInput>
           </mat-form-field>
           <mat-form-field appearance="fill" class="w-full">
             <mat-label>Birthdate</mat-label>
-            <input matInput>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
+          <div>
+            <mat-label>Birth Gender</mat-label>
+            <mat-radio-group aria-label="Select an option" class="flex grid-cols-2">
+              <mat-radio-button value="1">Male</mat-radio-button>
+              <mat-radio-button value="2">Female</mat-radio-button>
+            </mat-radio-group>
+          </div>
         </div>
-        <div>
-          <mat-label>Birth Gender</mat-label>
-          <mat-radio-group aria-label="Select an option">
-            <mat-radio-button value="1">Male</mat-radio-button>
-            <mat-radio-button value="2">Female</mat-radio-button>
-          </mat-radio-group>
-        </div>
-        <div class="flex grid-cols-3 space-x-4">
-          <mat-form-field appearance="fill" class="w-full">
-            <mat-label>Country</mat-label>
-            <mat-select>
-              <mat-option value="one">First option</mat-option>
-              <mat-option value="two">Second option</mat-option>
-            </mat-select>
-          </mat-form-field>
+        <div class="flex md:grid-cols-3 space-x-4">
+          <app-country-selector></app-country-selector>
           <mat-form-field appearance="fill" class="w-full">
             <mat-label>Phone Number</mat-label>
             <input matInput>
@@ -90,16 +84,16 @@
             <input matInput>
           </mat-form-field>
         </div>
+        <div class="grid md:grid-rows-2 place-items-center">
+          <mat-checkbox>I have read and agree to the <a class="text-secondary" href="#" target=”_blank”>Privacy Policy</a></mat-checkbox>
+          <mat-checkbox>I want to receive news from Medmeet via E-mail</mat-checkbox>
+        </div>
+        <button mat-raised-button color="primary" type="submit" class="w-full">Sign Up</button>
       </form>
-      <div class="grid grid-rows-2 place-items-center">
-        <mat-checkbox>I have read and agree to the <a class="text-secondary" href="#" target=”_blank”>Privacy Policy</a></mat-checkbox>
-        <mat-checkbox>I want to receive news from Medmeet via E-mail</mat-checkbox>
-      </div>
-      <button mat-raised-button color="primary" type="submit">Sign Up</button>
       <div class="grid place-items-center">
         <p class="text-secondary"><a class="hover:cursor-pointer" href="#">Forgot Password?</a></p>
         <p>Go back to <a class="hover:cursor-pointer text-secondary" [routerLink]="['/login']">Log in</a></p>
       </div>
-    </form>
+    </div>
   </div>
 </main>
