@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormControl} from '@angular/forms';
-import {FloatLabelType} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-register',
@@ -12,5 +10,5 @@ export class RegisterComponent {
   onSubmit() {
     // Handle form submission logic here
   }
-  
+
 }
