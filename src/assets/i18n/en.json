@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "sign-in-title": "Log In",
+    "e-mail": "E-mail",
+    "password": "Password",
+    "forgot-password-question": "Forgot Password?",
+    "dont-have-account-question": "Don't have an account? ",
+    "sign-up-title": "Register"
+  }
+}

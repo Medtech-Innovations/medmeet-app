@@ -3,23 +3,40 @@
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col space-y-6" (ngSubmit)="onSubmit()">
       <div class="grid place-items-center space-y-4">
         <a [routerLink]="['/login']"><img class="h-8" src="./assets/logo-medmeet.png" alt="Medmeet Logo"></a>
-        <h1 class="text-black font-medium text-3xl">Log In</h1>
+        <h1 class="text-black font-medium text-3xl">
+          {{ "auth.sign-in-title" | translate }}
+        </h1>
       </div>
       <mat-form-field appearance="fill" class="w-full">
-        <mat-label>E-mail</mat-label>
+        <mat-label>
+          {{ "auth.e-mail" | translate }}
+        </mat-label>
         <input matInput>
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Enter your password</mat-label>
+        <mat-label>
+          {{ "auth.password" | translate }}
+        </mat-label>
         <input matInput [type]="hide ? 'password' : 'text'">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
-      <button mat-raised-button color="primary" type="submit">Login</button>
+      <button mat-raised-button color="primary" type="submit">
+        {{ "auth.sign-in-title" | translate }}
+      </button>
       <div class="grid place-items-center">
-        <p class="text-secondary"><a class="hover:cursor-pointer" href="#">Forgot Password?</a></p>
-        <p>Don't have an account? <a class="hover:cursor-pointer text-secondary" [routerLink]="['/register']">Sign up</a></p>
+        <p class="text-secondary">
+          <a class="hover:cursor-pointer" href="#">
+            {{ "auth.forgot-password-question" | translate }}
+          </a>
+        </p>
+        <p>
+          {{ "auth.dont-have-account-question" | translate }}
+          <a class="hover:cursor-pointer text-secondary" [routerLink]="['/register']">
+            {{ "auth.sign-up-title" | translate }}
+          </a>
+        </p>
       </div>
     </form>
   </div>

@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 // Angular Material Design
 import { ReactiveFormsModule } from '@angular/forms';
@@ -37,9 +42,8 @@ import { BookAppointmentComponent } from './patient/pages/book-appointment/book-
 import { AttendingAvailabilityComponent } from './doctor/pages/attending-availability/attending-availability.component';
 import { NotificationsComponent } from './shared/pages/notifications/notifications.component';
 import { PaymentProfileComponent } from './payment/pages/payment-profile/payment-profile.component';
-import { DashboardDoctorComponent } from './doctor/pages/dashboard-doctor/dashboard-doctor.component';
-import { DashboardPatientComponent } from './patient/pages/dashboard-patient/dashboard-patient.component';
 import { CountrySelectorComponent } from './shared/pages/country-selector/country-selector.component';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 @NgModule({
@@ -55,11 +59,16 @@ import { CountrySelectorComponent } from './shared/pages/country-selector/countr
     AttendingAvailabilityComponent,
     NotificationsComponent,
     PaymentProfileComponent,
-    DashboardDoctorComponent,
-    DashboardPatientComponent,
     CountrySelectorComponent
   ],
   imports: [
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+    }),
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
