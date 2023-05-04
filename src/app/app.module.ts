@@ -30,6 +30,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 
 // Components
 import { LoginComponent } from './authentication/pages/login/login.component';
@@ -44,6 +45,7 @@ import { NotificationsComponent } from './shared/pages/notifications/notificatio
 import { PaymentProfileComponent } from './payment/pages/payment-profile/payment-profile.component';
 import { CountrySelectorComponent } from './shared/pages/country-selector/country-selector.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LanguageSwitcherComponent } from './shared/pages/language-switcher/language-switcher.component';
 
 
 @NgModule({
@@ -59,7 +61,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     AttendingAvailabilityComponent,
     NotificationsComponent,
     PaymentProfileComponent,
-    CountrySelectorComponent
+    CountrySelectorComponent,
+    LanguageSwitcherComponent
   ],
   imports: [
     TranslateModule.forRoot({
@@ -90,7 +93,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     MatSnackBarModule,
     MatProgressBarModule,
     MatNativeDateModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule
   ],
   providers: [
 

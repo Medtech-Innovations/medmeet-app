@@ -8,9 +8,16 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   title = 'medmeet-app';
+
+  avaliableLanguages = ['en', 'es'];
   constructor(public translate: TranslateService){
-    this.translate.addLangs(['en','es']);
+    this.translate.addLangs(this.avaliableLanguages);
     this.translate.setDefaultLang('en');
-    console.log("done");
   }
+
+  switchLanguage(language: string){
+    this.translate.use(language);
+  }
+  getAllLanguages(){ return this.avaliableLanguages; }
+  getCurrentLanguage(){ return this.translate.currentLang; }
 }
