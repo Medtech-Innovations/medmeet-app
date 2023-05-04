@@ -2,7 +2,7 @@
   <div class="w-full max-w-4xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
     <div class="bg-white shadow-md rounded px-8 py-8 flex flex-col space-y-2">
       <div class="grid place-items-center space-y-4">
-        <img class="h-8" src="./assets/logo-medmeet.png">
+        <a [routerLink]="['/login']"><img class="h-8" src="./assets/logo-medmeet.png" alt="Medmeet Logo"></a>
         <h1 class="text-black font-medium text-3xl">Sign Up</h1>
       </div>
       <form class="mt-4" (ngSubmit)="onSubmit()">
