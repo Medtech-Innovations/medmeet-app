@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import { DataService } from 'src/app/shared/services/data-service/data-service.service';
 import { Appointment } from '../../model/appointment';
 
+
 @Component({
   selector: 'app-book-appointment',
   templateUrl: './book-appointment.component.html',
@@ -47,8 +48,8 @@ export class BookAppointmentComponent {
     });
   }
 
-  updateAppointmentDoctor(doctorId: number) {
-    this.appointmentData.doctorID = doctorId;
+  updateAppointmentDoctor(doctor: any) {
+    this.appointmentData.doctor = doctor;
   }
 
   updateAppointmentDate(date: Date | null){

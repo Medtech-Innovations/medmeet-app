@@ -7,7 +7,8 @@
       "chats": "Chats",
       "notifications": "Notifications",
       "sign-out": "Sign out"
-    }
+    },
+    "join-appointment": "Join Appointment"
   },
   "auth": {
     "sign-in-title": "Log In",

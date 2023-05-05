@@ -85,7 +85,7 @@
                   <button
                   mat-raised-button color="primary"
                   matStepperNext
-                  (click)="updateAppointmentDoctor(doctor.id)">
+                  (click)="updateAppointmentDoctor(doctor)">
                     {{ "booking.book" | translate}}
                   </button>
                 </div>
@@ -116,14 +116,14 @@
           </div>
         </div>
         <div class="space-x-2">
+          <button  mat-raised-button color="primary" matStepperPrevious>
+            {{"booking.back" | translate}}
+          </button>
           <button
           mat-raised-button
           color="primary"
           matStepperNext>
             {{"booking.next" | translate}}
-          </button>
-          <button  mat-raised-button color="primary" matStepperPrevious>
-            {{"booking.back" | translate}}
           </button>
         </div>
       </form>
