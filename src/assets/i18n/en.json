@@ -76,6 +76,10 @@
     "back": "Back",
     "next": "Next"
   },
+  "chat": {
+    "patient-header": "Chat with doctors",
+    "doctor-header": "Chat with patients"
+  },
   "greeting": {
     "text": "Welcome to Medmeet, "
   }

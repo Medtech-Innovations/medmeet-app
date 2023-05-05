@@ -54,6 +54,7 @@ import { LanguageSwitcherComponent } from './shared/pages/language-switcher/lang
 import { RecoverPasswordComponent } from './authentication/pages/recover-password/recover-password.component';
 import { PatientDashboardComponent } from './patient/pages/patient-dashboard/patient-dashboard.component';
 import { HelpDeskComponent } from './help-desk/pages/help-desk/help-desk.component';
+import { ChatComponent } from "./shared/pages/chat/chat.component";
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { HelpDeskComponent } from './help-desk/pages/help-desk/help-desk.compone
     LanguageSwitcherComponent,
     RecoverPasswordComponent,
     PatientDashboardComponent,
-    HelpDeskComponent
+    HelpDeskComponent,
+    ChatComponent
   ],
   imports: [
     TranslateModule.forRoot({
