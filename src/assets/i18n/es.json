@@ -76,5 +76,12 @@
     "next": "Siguiente",
     "confirm-appointment":"Confirmar pago",
     "booked": "¡Reservado!"
+  },
+  "chat": {
+    "patient-header": "Comunícate con tu doctor",
+    "doctor-header": "Comunícate con tu paciente"
+  },
+  "greeting": {
+    "text": "Bienvenido a Medmeet, "
   }
 }

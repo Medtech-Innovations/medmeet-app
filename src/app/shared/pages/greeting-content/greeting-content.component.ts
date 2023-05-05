@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./greeting-content.component.css']
 })
 export class GreetingContentComponent {
-
+  user = {
+    name: "Ricardo"
+  };
 }
