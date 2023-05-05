@@ -75,5 +75,8 @@
     "go-home": "Go home",
     "back": "Back",
     "next": "Next"
+  },
+  "greeting": {
+    "text": "Welcome to Medmeet, "
   }
 }
