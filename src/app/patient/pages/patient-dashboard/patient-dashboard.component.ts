@@ -18,14 +18,24 @@ export class PatientDashboardComponent {
       this.appointmentService.getAll(this.appointmentsPath).subscribe(data => {
       this.appointments = data;
     });
-    interval(10000).pipe(
-      switchMap(() => this.appointmentService.getAll(this.appointmentsPath))
-    ).subscribe(data => {
-      this.appointments = data;
-    });
   }
 
   deleteAppointment(id: number){
-    this.appointmentService.delete(id,this.appointmentsPath);
+    this.appointmentService.delete(id,this.appointmentsPath)
+      .subscribe(
+        () => {
+          console.log(`${id} deleted successfully`);
+          this.appointmentService.getAll(this.appointmentsPath).subscribe(data => {
+            this.appointments = data;
+          });
+        },
+        (error) => {
+          console.log(`Error deleting ${id}: ${error.message}`);
+        }
+      );
+  }
+
+  updateAppointment(id: number, item:Appointment ){
+    
   }
 }

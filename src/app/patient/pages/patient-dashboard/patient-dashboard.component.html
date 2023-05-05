@@ -19,9 +19,11 @@
                     <ul>
                       <li class="font-medium text-3xl"><h1>{{appointment.doctor.name}} {{appointment.doctor.lastName}}</h1></li>
                       <li class="font-medium text-lg">{{appointment.doctor.specialty}}</li>
+                      <li class="font-medium text-lg">{{appointment.date}}</li>
                     </ul>
                     <div class="flex gap-4">
-                      <button mat-mini-fab color="primary" aria-label="Edit">
+                      <button mat-mini-fab color="primary"
+                      aria-label="Edit">
                         <mat-icon>edit</mat-icon>
                       </button>
                       <button
@@ -30,6 +32,12 @@
                       (click)="deleteAppointment(appointment.id)">
                         <mat-icon>delete</mat-icon>
                       </button>
+                    </div>
+                    <div class="">
+                      <mat-form-field>
+                        <mat-label>Edit date</mat-label>
+                        <input matInput placeholder="Edit the date" [value]="appointment.date">
+                      </mat-form-field>
                     </div>
                   </div>
                 </div>

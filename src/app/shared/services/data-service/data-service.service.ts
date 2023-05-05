@@ -30,16 +30,27 @@ export class DataService<T> {
   }
 
   create(item: T, basePath: string): Observable<T> {
-    return this.http.post<any>(basePath, item);
+    return this.http.post<any>(basePath, item)
+    .pipe(
+      retry(2),
+      catchError(this.handleError));
+  }
+
+  update(id: number, basePath:string, data: T): Observable<T> {
+    const url = `${basePath}/${id}`;
+    return this.http.put<T>(url, data)
+    .pipe(
+      retry(2),
+      catchError(this.handleError));
   }
 
   delete(id: number, basePath: string){
     const url = `${basePath}/${id}`;
     console.log(url);
-    this.http.delete<T>(url)
-    .pipe(
-      retry(2),
-      catchError(this.handleError));
+    return this.http.delete<any>(url)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
   }
 
 }

@@ -58,7 +58,6 @@ export class BookAppointmentComponent {
   }
 
   createAppointment() {
-    this.appointmentData.id = 0;
     this.appointmentService.create(this.appointmentData,this.appointmentsPath).
     subscribe((response: any) => {
       console.log('Appointment created successfully.');
