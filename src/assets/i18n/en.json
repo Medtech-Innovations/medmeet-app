@@ -33,7 +33,8 @@
       "title": "Password Recovery",
       "enter-new-password": "Enter new password",
       "go-back": "Go back to",
-      "change-password": "Change Password"
+      "change-password": "Change Password",
+      "confirm-new-password": "Confirm Password"
     },
     "password-forgot": {
       "title": "Forgot Password",

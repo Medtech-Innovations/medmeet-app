@@ -33,7 +33,8 @@
       "title": "Recuperación de contraseña",
       "enter-new-password": "Ingresa una nueva contraseña",
       "go-back": "Volver a",
-      "change-password": "Cambiar contraseña"
+      "change-password": "Cambiar contraseña",
+      "confirm-new-password": "Confirmar Contraseña"
     },
     "password-forgot":{
       "title": "¿Olvidaste tu contraseña?",
