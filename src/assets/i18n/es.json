@@ -74,5 +74,8 @@
     "go-home": "Volver al inicio",
     "back": "Atrás",
     "next": "Siguiente"
+  },
+  "greeting": {
+    "text": "Bienvenido a Medmeet, "
   }
 }
