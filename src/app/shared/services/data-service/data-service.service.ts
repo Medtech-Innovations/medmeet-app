@@ -33,5 +33,13 @@ export class DataService<T> {
     return this.http.post<any>(basePath, item);
   }
 
+  delete(id: number, basePath: string){
+    const url = `${basePath}/${id}`;
+    console.log(url);
+    this.http.delete<T>(url)
+    .pipe(
+      retry(2),
+      catchError(this.handleError));
+  }
 
 }
