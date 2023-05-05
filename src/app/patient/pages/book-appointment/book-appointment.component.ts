@@ -2,9 +2,6 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import { DataService } from 'src/app/shared/services/data-service/data-service.service';
 import { Appointment } from '../../model/appointment';
-import { v4 as uuidv4 } from 'uuid';
-import { MatStepper } from '@angular/material/stepper';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-book-appointment',
@@ -60,7 +57,7 @@ export class BookAppointmentComponent {
   }
 
   createAppointment() {
-    this.appointmentData.id = [uuidv4()];
+    this.appointmentData.id = 0;
     this.appointmentService.create(this.appointmentData,this.appointmentsPath).
     subscribe((response: any) => {
       console.log('Appointment created successfully.');

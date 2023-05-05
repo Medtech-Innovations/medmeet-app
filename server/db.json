@@ -61,12 +61,6 @@
     }
   ],
   "appointments": [
-    {
-      "doctorID": 1,
-      "date": "2023-05-17T05:00:00.000Z",
-      "id": [
-        "c34bc284-2ea6-4a18-8830-cb314bdcdf1d"
-      ]
-    }
+
   ]
 }
