@@ -1,0 +1,45 @@
+<div>
+<button class="btn" onclick="mostrarPopup()">Chat BOT</button>
+<div class="popup" id="popup">
+  <div class="title">
+    Chat Bot
+    <button class="close-btn" onclick="cerrarPopup()">X</button>
+  </div>
+  <div class="welcome-msg"> Hola,en que puedo ayudarte? </div>
+  <div class="options">
+    <div class="option" onclick="mostrarFormulario()">
+      <div class="option-text">Contact US</div>
+    </div>
+    <div class="option" onclick="opcion2()">
+      <div class="option-text">Opcion 2</div>
+    </div>
+  </div>
+</div>
+<div class="popup" id="formulario" style="display: none;">
+  <div class="title">
+    Contacto US
+    <button class="close-btn" onclick="cerrarFormulario()">X</button>
+  </div>
+  <form onsubmit="mostrarExito(); return false;">
+    <label for="name">Nombre:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="subject">Apellidos:</label><br>
+    <input type="text" id="subject" name="apellido"><br>
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="email"><br>
+    <label for="content">Mensaje:</label><br>
+    <textarea id="content" name="content"></textarea><br>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+<div class="popup" id="exito" style="display: none;">
+  <div class="title"> Thank you for contacting us </div>
+  <div class="mensaje">
+    <p>Your e-mail was sent!
+      We will reply to you as soon as we can</p>
+  </div>
+  <button class="volver-btn" onclick="volverInicio()">Volver al inicio</button>
+</div>
+
+</div>

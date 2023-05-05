@@ -34,6 +34,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 
 // Components
 import { LoginComponent } from './authentication/pages/login/login.component';
@@ -49,7 +51,9 @@ import { PaymentProfileComponent } from './payment/pages/payment-profile/payment
 import { CountrySelectorComponent } from './shared/pages/country-selector/country-selector.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguageSwitcherComponent } from './shared/pages/language-switcher/language-switcher.component';
-
+import { RecoverPasswordComponent } from './authentication/pages/recover-password/recover-password.component';
+import { PatientDashboardComponent } from './patient/pages/patient-dashboard/patient-dashboard.component';
+import { HelpDeskComponent } from './help-desk/pages/help-desk/help-desk.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +70,9 @@ import { LanguageSwitcherComponent } from './shared/pages/language-switcher/lang
     PaymentProfileComponent,
     CountrySelectorComponent,
     LanguageSwitcherComponent,
+    RecoverPasswordComponent,
+    PatientDashboardComponent,
+    HelpDeskComponent
   ],
   imports: [
     TranslateModule.forRoot({
@@ -101,6 +108,7 @@ import { LanguageSwitcherComponent } from './shared/pages/language-switcher/lang
     MatStepperModule,
     MatCardModule,
     ReactiveFormsModule,
+    MatToolbarModule
   ],
   providers: [
 
@@ -108,4 +116,3 @@ import { LanguageSwitcherComponent } from './shared/pages/language-switcher/lang
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

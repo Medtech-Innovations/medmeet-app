@@ -1,1 +1,32 @@
-<p>navbar works!</p>
+<mat-toolbar class="bg-white flex justify-around items-center">
+  <a [routerLink]="['/home']">
+    <img src="../assets/logo-medmeet.png" width="140px" alt="Medmeet Logo">
+  </a>
+  <div class="flex justify center gap-4">
+    <button mat-flat-button color="accent" [routerLink]="['/book']">
+      {{ "dashboard.navbar.book-appointment" | translate }}
+    </button>
+    <button color="primary" mat-mini-fab [matMenuTriggerFor]="menu">
+      <mat-icon>home</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/home']">
+        {{ "dashboard.navbar.home" | translate }}
+      </button>
+      <button mat-menu-item>
+        {{ "dashboard.navbar.my-profile" | translate }}
+      </button>
+      <button mat-menu-item>
+        {{ "dashboard.navbar.chats" | translate }}
+      </button>
+      <button mat-menu-item>
+        {{ "dashboard.navbar.notifications" | translate }}
+      </button>
+      <button mat-menu-item>
+        {{ "dashboard.navbar.sign-out" | translate }}
+      </button>
+    </mat-menu>
+    <app-language-switcher></app-language-switcher>
+  </div>
+</mat-toolbar>
+
