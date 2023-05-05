@@ -49,7 +49,7 @@ import { PaymentProfileComponent } from './payment/pages/payment-profile/payment
 import { CountrySelectorComponent } from './shared/pages/country-selector/country-selector.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguageSwitcherComponent } from './shared/pages/language-switcher/language-switcher.component';
-
+import { RecoverPasswordComponent } from './authentication/pages/recover-password/recover-password.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +66,7 @@ import { LanguageSwitcherComponent } from './shared/pages/language-switcher/lang
     PaymentProfileComponent,
     CountrySelectorComponent,
     LanguageSwitcherComponent,
+    RecoverPasswordComponent
   ],
   imports: [
     TranslateModule.forRoot({

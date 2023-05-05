@@ -28,6 +28,19 @@
       "agree-description": "I have read and agree to the ",
       "privacy-policy": "Privay Policy",
       "receive-news": "I want to receive news from Medmeet via E-mail"
+    },
+    "password-recovery": {
+      "title": "Password Recovery",
+      "enter-new-password": "Enter new password",
+      "go-back": "Go back to",
+      "change-password": "Change Password",
+      "confirm-new-password": "Confirm Password"
+    },
+    "password-forgot": {
+      "title": "Forgot Password",
+      "description": "Enter your email address and we'll send you a link to reset your password.",
+      "send-link": "Send Link",
+      "go-back": "Go back to"
     }
   },
   "booking": {
