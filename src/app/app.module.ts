@@ -65,7 +65,7 @@ import { LanguageSwitcherComponent } from './shared/pages/language-switcher/lang
     NotificationsComponent,
     PaymentProfileComponent,
     CountrySelectorComponent,
-    LanguageSwitcherComponent
+    LanguageSwitcherComponent,
   ],
   imports: [
     TranslateModule.forRoot({

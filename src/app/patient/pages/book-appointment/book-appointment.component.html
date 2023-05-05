@@ -1,57 +1,87 @@
 <main class="book-appointment">
+  <div class="flex items-center place-items-center w-full py-4">
+    <img class="w-8" src="./assets/medmeed-icon.png">
+    <h1 class="font-medium text-3xl">{{"booking.title" | translate}}</h1>
+  </div>
   <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Select a doctor</ng-template>
-
+        <ng-template matStepLabel>
+          {{ "booking.select-doctor-title" | translate}}
+        </ng-template>
         <div class="filters space-y-2">
-          <h1 class="text-primary font-medium">Filters</h1>
+          <h1 class="text-primary font-medium">
+            {{ "booking.filters" | translate}}
+          </h1>
           <div class="flex space-x-6">
             <mat-form-field appearance="fill">
-              <mat-label>
-                {{ "auth.register.specialty-label" | translate }}
-              </mat-label>
+              <mat-label>{{ "auth.register.specialty-label" | translate }}</mat-label>
               <mat-select>
                 <mat-option value="one">In progress</mat-option>
               </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill">
-              <mat-label>Search by doctor</mat-label>
+              <mat-label>{{ "booking.search-by-doctor" | translate}}</mat-label>
               <input matInput type="text">
-              <button mat-button matSuffix>
-                <mat-icon>search</mat-icon>
-              </button>
+              <button mat-button matSuffix><mat-icon>search</mat-icon></button>
             </mat-form-field>
-            <app-country-selector>
-            </app-country-selector>
+            <app-country-selector></app-country-selector>
             <mat-form-field appearance="fill">
-              <mat-label>Enter a date range</mat-label>
+              <mat-label>{{ "booking.enter-a-date-range" | translate}}</mat-label>
               <mat-date-range-input [rangePicker]="picker">
                 <input matStartDate placeholder="Start date">
                 <input matEndDate placeholder="End date">
               </mat-date-range-input>
-              <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+              <mat-hint>{{ "booking.date-hint" | translate}}</mat-hint>
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-date-range-picker #picker></mat-date-range-picker>
             </mat-form-field>
             <mat-form-field appearance="fill">
-              <mat-label>
-                Patient
-              </mat-label>
+              <mat-label>{{ "booking.patient" | translate}}</mat-label>
               <mat-select>
-                <mat-option value="one">Myself</mat-option>
-                <mat-option value="one">My child</mat-option>
+                <mat-option value="one">{{ "booking.myself" | translate}}</mat-option>
+                <mat-option value="one">{{ "booking.mychild" | translate}}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
         </div>
+
         <div class="filters space-y-2">
-          <h1 class="text-primary font-medium">Select your doctor</h1>
+          <h1 class="text-primary font-medium text-3xl">
+            {{ "booking.select-your-doctor" | translate}}
+          </h1>
 
-          <div>
-            <button mat-button matStepperNext>Next</button>
+          <div class="flex grid-cols-4 space-x-6">
+            <mat-card *ngFor="let doctor of doctors" class="max-w-md shadow-md">
+              <div class="flex flex-col px-6 py-6">
+                <div class="flex items-center space-x-6">
+                  <div class="h-40 w-40 rounded-full overflow-hidden">
+                    <img class="object-cover" src="{{ doctor.profileImageUrl }}" alt="Doctor's profile image">
+                  </div>
+                  <div class="flex-grow doctor-information">
+                    <ul>
+                      <li class="font-medium text-3xl"><h1>{{doctor.name}} {{doctor.lastName}}</h1></li>
+                      <li class="font-medium text-lg">{{doctor.specialty}}</li>
+                      <li>
+                        <span>{{"booking.rating" | translate}}:</span>
+                        {{doctor.rating}}
+                      </li>
+                      <li><a class="text-secondary" href="#">{{"booking.view-profile" | translate}}</a></li>
+                      <li>
+                        <span class="font-medium text-lg">{{"booking.price" | translate}}: {{doctor.price}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="flex items-center place-items-center">
+                  <button class="w-full" mat-raised-button color="primary" matStepperNext>
+                    {{ "booking.book" | translate}}
+                  </button>
+                </div>
+              </div>
+            </mat-card>
           </div>
-
         </div>
       </form>
     </mat-step>
@@ -61,29 +91,45 @@
           <mat-card class="demo-inline-calendar-card">
             <mat-calendar [(selected)]="selectedDate"></mat-calendar>
           </mat-card>
-          <p>Selected date: {{selectedDate}}</p>
+          <p>
+            {{"booking.selected-date" | translate}}<br>
+            <span class="text-primary font-medium">{{selectedDate}}</span>
+          </p>
         </div>
-        <div>
-          <button mat-button matStepperNext>Next</button>
+        <div class="space-x-2">
+          <button mat-raised-button color="primary" matStepperNext>
+            {{"booking.next" | translate}}
+          </button>
+          <button  mat-raised-button color="primary" matStepperPrevious>
+            {{"booking.back" | translate}}
+          </button>
         </div>
       </form>
     </mat-step>
     <mat-step [stepControl]="thirdFormGroup" label="Select payment">
       <form [formGroup]="thirdFormGroup">
-        <h1 class="text-primary font-medium">Payment</h1>
+        <h1 class="text-primary font-medium">
+          {{"booking.payment" | translate}}
+        </h1>
         <p>Building...</p>
-        <div>
-          <button mat-button matStepperNext>Next</button>
+        <div class="space-x-2">
+          <button mat-raised-button color="primary" matStepperNext>
+            {{"booking.next" | translate}}
+          </button>
+          <button  mat-raised-button color="primary" matStepperPrevious>
+            {{"booking.back" | translate}}
+          </button>
         </div>
       </form>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Confirm</ng-template>
-      <p>Your appointment has been booked! Go to Home</p>
-      <div>
-
-        <button mat-button matStepperPrevious>Back</button>
-      </div>
+      <p>
+        {{"booking.confirmation-text" | translate}}
+        <a class="text-secondary" href="#">
+          {{"booking.go-home" | translate}}
+        </a>
+      </p>
     </mat-step>
   </mat-stepper>
 </main>

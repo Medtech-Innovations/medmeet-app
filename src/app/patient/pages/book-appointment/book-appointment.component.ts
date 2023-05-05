@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
+import { DoctorsService } from '../../services/doctors/doctors.service';
 
 @Component({
   selector: 'app-book-appointment',
@@ -19,6 +20,14 @@ export class BookAppointmentComponent {
   });
   isLinear = false;
 
+  doctors: any = [];
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private doctorService: DoctorsService ) {}
+
+  ngOnInit() {
+    this.doctorService.getAll().subscribe(doctors => {
+      this.doctors = doctors;
+    });
+  }
+
 }
