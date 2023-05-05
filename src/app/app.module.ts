@@ -34,6 +34,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 
 // Components
 import { LoginComponent } from './authentication/pages/login/login.component';
@@ -104,6 +106,7 @@ import { PatientDashboardComponent } from './patient/pages/patient-dashboard/pat
     MatStepperModule,
     MatCardModule,
     ReactiveFormsModule,
+    MatToolbarModule
   ],
   providers: [
 
@@ -111,4 +114,3 @@ import { PatientDashboardComponent } from './patient/pages/patient-dashboard/pat
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
