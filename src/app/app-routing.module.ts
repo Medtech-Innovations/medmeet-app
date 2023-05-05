@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './authentication/pages/login/login.component';
 import { RegisterComponent } from './authentication/pages/register/register.component';
 import { BookAppointmentComponent } from './patient/pages/book-appointment/book-appointment.component';
-import { CountrySelectorComponent } from './shared/pages/country-selector/country-selector.component';
 import { ForgotPasswordComponent } from "./authentication/pages/forgot-password/forgot-password.component";
 import { RecoverPasswordComponent } from "./authentication/pages/recover-password/recover-password.component";
 import { PatientDashboardComponent } from './patient/pages/patient-dashboard/patient-dashboard.component';
