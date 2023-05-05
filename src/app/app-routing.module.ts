@@ -7,13 +7,16 @@ import { BookAppointmentComponent } from './patient/pages/book-appointment/book-
 import { CountrySelectorComponent } from './shared/pages/country-selector/country-selector.component';
 import { ForgotPasswordComponent } from "./authentication/pages/forgot-password/forgot-password.component";
 import { RecoverPasswordComponent } from "./authentication/pages/recover-password/recover-password.component";
+import { PatientDashboardComponent } from './patient/pages/patient-dashboard/patient-dashboard.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'recover-password', component: RecoverPasswordComponent },
-  { path: 'book', component: BookAppointmentComponent }
+  { path: 'book', component: BookAppointmentComponent },
+  { path: 'home', component: PatientDashboardComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({

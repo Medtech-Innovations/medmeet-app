@@ -14,6 +14,9 @@ module.exports = {
         black: '#313131'
       },
     },
+    container: {
+      center: true,
+    },
   },
   plugins: [],
 }
