@@ -53,6 +53,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguageSwitcherComponent } from './shared/pages/language-switcher/language-switcher.component';
 import { RecoverPasswordComponent } from './authentication/pages/recover-password/recover-password.component';
 import { PatientDashboardComponent } from './patient/pages/patient-dashboard/patient-dashboard.component';
+import { HelpDeskComponent } from './help-desk/pages/help-desk/help-desk.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { PatientDashboardComponent } from './patient/pages/patient-dashboard/pat
     CountrySelectorComponent,
     LanguageSwitcherComponent,
     RecoverPasswordComponent,
-    PatientDashboardComponent
+    PatientDashboardComponent,
+    HelpDeskComponent
   ],
   imports: [
     TranslateModule.forRoot({
