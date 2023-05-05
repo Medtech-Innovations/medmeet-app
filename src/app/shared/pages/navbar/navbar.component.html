@@ -1,1 +1,25 @@
-<p>navbar works!</p>
+<div style="background-color: white;">
+
+      
+    <p>
+      <mat-toolbar>
+      <img src="../assets/logo-medmeet.png" width="140px" alt="">
+      <span class="example-spacer"></span>
+
+
+      <button mat-raised-button style="margin-right: 12px;">Book an appointment</button>
+
+      
+      <button mat-button [matMenuTriggerFor]="menu">Account</button>
+          <mat-menu #menu="matMenu">
+          <button mat-menu-item>Home</button>
+          <button mat-menu-item>My profile</button>
+          <button mat-menu-item>Chats</button>
+          <button mat-menu-item>Notifications</button>
+          <button mat-menu-item>Sign Out</button>
+      </mat-menu>
+
+
+    </mat-toolbar>
+    </p>
+  </div>
