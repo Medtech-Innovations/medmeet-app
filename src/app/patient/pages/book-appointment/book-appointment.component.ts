@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import { DoctorsService } from '../../services/doctors/doctors.service';
+import { DataService } from 'src/app/shared/services/data-service/data-service.service';
+import { Appointment } from '../../model/appointment';
 
 @Component({
   selector: 'app-book-appointment',
@@ -20,14 +21,20 @@ export class BookAppointmentComponent {
   });
   isLinear = false;
 
+  doctorsPath = 'http://localhost:3000/doctors';
   doctors: any = [];
 
-  constructor(private _formBuilder: FormBuilder, private doctorService: DoctorsService ) {}
+  constructor(
+    private _formBuilder: FormBuilder,
+    private doctorService: DataService<any>,
+    private appointmentService: DataService<Appointment>) {}
 
   ngOnInit() {
-    this.doctorService.getAll().subscribe(doctors => {
-      this.doctors = doctors;
+    this.doctorService.getAll(this.doctorsPath).subscribe(data => {
+      this.doctors = data;
     });
   }
+
+
 
 }

@@ -34,6 +34,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 
 // Components
 import { LoginComponent } from './authentication/pages/login/login.component';
@@ -50,6 +52,8 @@ import { CountrySelectorComponent } from './shared/pages/country-selector/countr
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguageSwitcherComponent } from './shared/pages/language-switcher/language-switcher.component';
 import { RecoverPasswordComponent } from './authentication/pages/recover-password/recover-password.component';
+import { PatientDashboardComponent } from './patient/pages/patient-dashboard/patient-dashboard.component';
+import { HelpDeskComponent } from './help-desk/pages/help-desk/help-desk.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +70,9 @@ import { RecoverPasswordComponent } from './authentication/pages/recover-passwor
     PaymentProfileComponent,
     CountrySelectorComponent,
     LanguageSwitcherComponent,
-    RecoverPasswordComponent
+    RecoverPasswordComponent,
+    PatientDashboardComponent,
+    HelpDeskComponent
   ],
   imports: [
     TranslateModule.forRoot({
@@ -102,6 +108,7 @@ import { RecoverPasswordComponent } from './authentication/pages/recover-passwor
     MatStepperModule,
     MatCardModule,
     ReactiveFormsModule,
+    MatToolbarModule
   ],
   providers: [
 
@@ -109,4 +116,3 @@ import { RecoverPasswordComponent } from './authentication/pages/recover-passwor
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
