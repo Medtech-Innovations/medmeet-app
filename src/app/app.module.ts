@@ -50,6 +50,7 @@ import { CountrySelectorComponent } from './shared/pages/country-selector/countr
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguageSwitcherComponent } from './shared/pages/language-switcher/language-switcher.component';
 import { RecoverPasswordComponent } from './authentication/pages/recover-password/recover-password.component';
+import { PatientDashboardComponent } from './patient/pages/patient-dashboard/patient-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { RecoverPasswordComponent } from './authentication/pages/recover-passwor
     PaymentProfileComponent,
     CountrySelectorComponent,
     LanguageSwitcherComponent,
-    RecoverPasswordComponent
+    RecoverPasswordComponent,
+    PatientDashboardComponent
   ],
   imports: [
     TranslateModule.forRoot({
