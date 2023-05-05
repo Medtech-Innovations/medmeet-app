@@ -5,12 +5,15 @@
       <h1 class="font-medium text-3xl">{{"booking.title" | translate}}</h1>
     </div>
   </div>
+
+
   <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>
           {{ "booking.select-doctor-title" | translate}}
         </ng-template>
+
         <div class="filters space-y-2">
           <h1 class="text-primary font-medium">
             {{ "booking.filters" | translate}}
@@ -78,31 +81,45 @@
                     </ul>
                   </div>
                 </div>
-
-                <div class="flex items-center place-items-center">
-                  <button class="w-full" mat-raised-button color="primary" matStepperNext>
+<!-- Apointment doctor ID -->
+                  <button
+                  mat-raised-button color="primary"
+                  matStepperNext
+                  (click)="updateAppointmentDoctor(doctor.id)">
                     {{ "booking.book" | translate}}
                   </button>
                 </div>
-              </div>
             </mat-card>
           </div>
         </div>
       </form>
     </mat-step>
+
+
     <mat-step [stepControl]="secondFormGroup" label="Select date">
       <form [formGroup]="secondFormGroup">
         <div class="max-w-md">
-          <mat-card class="demo-inline-calendar-card">
-            <mat-calendar [(selected)]="selectedDate"></mat-calendar>
-          </mat-card>
-          <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Angular forms</mat-label>
+            <input matInput [matDatepicker]="picker1"
+            [formControl]="date">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+<!-- Apointment date -->
+          <div>
             {{"booking.selected-date" | translate}}<br>
-            <span class="text-primary font-medium">{{selectedDate}}</span>
-          </p>
+            <span class="text-primary font-medium">
+              {{selectedDate}}
+            </span>
+          </div>
         </div>
         <div class="space-x-2">
-          <button mat-raised-button color="primary" matStepperNext>
+          <button
+          mat-raised-button
+          color="primary"
+          matStepperNext>
             {{"booking.next" | translate}}
           </button>
           <button  mat-raised-button color="primary" matStepperPrevious>
@@ -117,13 +134,15 @@
           {{"booking.payment" | translate}}
         </h1>
         <p>Building...</p>
-        <div class="space-x-2">
-          <button mat-raised-button color="primary" matStepperNext>
-            {{"booking.next" | translate}}
-          </button>
-          <button  mat-raised-button color="primary" matStepperPrevious>
-            {{"booking.back" | translate}}
-          </button>
+        <div class="space-y-2">
+          <div class="space-x-2">
+            <button  mat-raised-button color="primary" matStepperPrevious>
+              {{"booking.back" | translate}}
+            </button>
+            <button mat-raised-button color="primary" (click)="createAppointment()" matStepperNext>
+              {{ "booking.confirm-payment" | translate }}
+            </button>
+          </div>
         </div>
       </form>
     </mat-step>
@@ -136,5 +155,7 @@
         </a>
       </p>
     </mat-step>
+
+
   </mat-stepper>
 </main>

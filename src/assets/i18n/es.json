@@ -73,7 +73,9 @@
     "confirmation-text": "¡Tu cita médica ha sido confirmada!",
     "go-home": "Volver al inicio",
     "back": "Atrás",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "confirm-appointment":"Confirmar pago",
+    "booked": "¡Reservado!"
   },
   "chat": {
     "patient-header": "Comunícate con tu doctor",
