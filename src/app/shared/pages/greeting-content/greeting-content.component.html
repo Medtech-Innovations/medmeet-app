@@ -1,1 +1,10 @@
-<p>greeting-content works!</p>
+<main>
+  <div class=" justify-center items-center">
+    <h1 class="text-2xl text-center p-4">
+      {{ "greeting.text" | translate }}
+      <span class="text-blue-500">
+          {{ user.name }}
+        </span>
+    </h1>
+  </div>
+</main>

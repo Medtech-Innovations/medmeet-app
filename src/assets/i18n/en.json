@@ -74,8 +74,15 @@
     "confirmation-text": "Your appointment has been booked!",
     "go-home": "Go home",
     "back": "Back",
-    "next": "Next",
     "confirm-payment":"Confirm payment",
-    "booked": "Booked!"
+    "booked": "Booked!",
+    "next": "Next"
+  },
+  "chat": {
+    "patient-header": "Chat with doctors",
+    "doctor-header": "Chat with patients"
+  },
+  "greeting": {
+    "text": "Welcome to Medmeet, "
   }
 }

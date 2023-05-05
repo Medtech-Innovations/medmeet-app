@@ -7,7 +7,8 @@ import { BookAppointmentComponent } from './patient/pages/book-appointment/book-
 import { ForgotPasswordComponent } from "./authentication/pages/forgot-password/forgot-password.component";
 import { RecoverPasswordComponent } from "./authentication/pages/recover-password/recover-password.component";
 import { PatientDashboardComponent } from './patient/pages/patient-dashboard/patient-dashboard.component';
-import {HelpDeskComponent} from "./help-desk/pages/help-desk/help-desk.component";
+import { HelpDeskComponent } from "./help-desk/pages/help-desk/help-desk.component";
+import { ChatComponent } from "./shared/pages/chat/chat.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'recover-password', component: RecoverPasswordComponent },
   { path: 'book', component: BookAppointmentComponent },
+  { path: 'chat', component: ChatComponent },
   { path: 'help-desk', component: HelpDeskComponent},
   { path: 'home', component: PatientDashboardComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
