@@ -1,15 +1,66 @@
 {
-  "users": [
+  "patients": [
     {
       "id": 1,
-      "name": "Natalia Gómez",
-      "isRecruiter": true,
-      "subTitle": "ACME Studios",
+      "name": "Natalia",
+      "lastName": "Gómez",
       "email": "natalia_gomez@mail.com",
-      "password": "super-secure123",
-      "phoneNumber": 99900066,
-      "profileImageUrl": "https://im.idiva.com/content/2016/Feb/girl_woman_working_career1.jpg",
-      "subscribedToNewsLetter": false
+      "password": "super123",
+      "legalID": "81903182",
+      "birthdate": "",
+      "gender": "female",
+      "country": "Peru",
+      "phoneNumber": "99900066",
+      "address": "UPC San Isidro",
+      "subscribedToNewsLetter": false,
+      "profileImageUrl": "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
+  ],
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Caitlin",
+      "lastName": "Colona",
+      "email": "caitlin_colona@mail.com",
+      "password": "super123",
+      "legalID": "94128731",
+      "birthdate": "",
+      "gender": "female",
+      "country": "Peru",
+      "phoneNumber": "99900066",
+      "address": "UPC San Isidro",
+      "subscribedToNewsLetter": false,
+      "specialty": "General Medicine",
+      "price": 25,
+      "availableDates": [],
+      "supportingDocuments":[],
+      "doctorPermitID": "ASK18XAM",
+      "rating": 9,
+      "profileImageUrl": "https://images.pexels.com/photos/6749778/pexels-photo-6749778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 2,
+      "name": "Joanne",
+      "lastName": "Chan",
+      "email": "jaonne_chan@mail.com",
+      "password": "super123",
+      "legalID": "8293719",
+      "birthdate": "",
+      "gender": "female",
+      "country": "Peru",
+      "phoneNumber": "991726563",
+      "address": "UPC San Isidro",
+      "subscribedToNewsLetter": false,
+      "specialty": "Pediatrics",
+      "price": 30,
+      "availableDates": [],
+      "supportingDocuments":[],
+      "doctorPermitID": "ASK18XAM",
+      "rating": 10,
+      "profileImageUrl": "https://images.pexels.com/photos/12495583/pexels-photo-12495583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  ],
+  "appointments": [
+
   ]
 }
