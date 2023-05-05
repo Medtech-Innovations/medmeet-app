@@ -1,4 +1,14 @@
 {
+  "dashboard":{
+    "navbar": {
+      "book-appointment": "Agendar cita",
+      "home": "Inicio",
+      "my-profile": "Mi Perfil",
+      "chats": "Chats",
+      "notifications": "Notificaciones",
+      "sign-out": "Cerrar sesión"
+    }
+  },
   "auth": {
     "sign-in-title": "Inicio de sesión",
     "sign-up-title": "Registro",
