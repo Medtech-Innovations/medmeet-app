@@ -63,6 +63,31 @@
   "appointments": [
     {
       "doctor": {
+        "id": 1,
+        "name": "Caitlin",
+        "lastName": "Colona",
+        "email": "caitlin_colona@mail.com",
+        "password": "super123",
+        "legalID": "94128731",
+        "birthdate": "",
+        "gender": "female",
+        "country": "Peru",
+        "phoneNumber": "99900066",
+        "address": "UPC San Isidro",
+        "subscribedToNewsLetter": false,
+        "specialty": "General Medicine",
+        "price": 25,
+        "availableDates": [],
+        "supportingDocuments": [],
+        "doctorPermitID": "ASK18XAM",
+        "rating": 9,
+        "profileImageUrl": "https://images.pexels.com/photos/6749778/pexels-photo-6749778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      },
+      "date": "2023-05-18T05:00:00.000Z",
+      "id": 2
+    },
+    {
+      "doctor": {
         "id": 2,
         "name": "Joanne",
         "lastName": "Chan",
@@ -83,8 +108,58 @@
         "rating": 10,
         "profileImageUrl": "https://images.pexels.com/photos/12495583/pexels-photo-12495583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       },
-      "date": "2023-05-09T05:00:00.000Z",
-      "id": 1
+      "date": "2023-05-13T05:00:00.000Z",
+      "id": 3
+    },
+    {
+      "doctor": {
+        "id": 1,
+        "name": "Caitlin",
+        "lastName": "Colona",
+        "email": "caitlin_colona@mail.com",
+        "password": "super123",
+        "legalID": "94128731",
+        "birthdate": "",
+        "gender": "female",
+        "country": "Peru",
+        "phoneNumber": "99900066",
+        "address": "UPC San Isidro",
+        "subscribedToNewsLetter": false,
+        "specialty": "General Medicine",
+        "price": 25,
+        "availableDates": [],
+        "supportingDocuments": [],
+        "doctorPermitID": "ASK18XAM",
+        "rating": 9,
+        "profileImageUrl": "https://images.pexels.com/photos/6749778/pexels-photo-6749778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      },
+      "date": "2023-05-16T05:00:00.000Z",
+      "id": 4
+    },
+    {
+      "doctor": {
+        "id": 2,
+        "name": "Joanne",
+        "lastName": "Chan",
+        "email": "jaonne_chan@mail.com",
+        "password": "super123",
+        "legalID": "8293719",
+        "birthdate": "",
+        "gender": "female",
+        "country": "Peru",
+        "phoneNumber": "991726563",
+        "address": "UPC San Isidro",
+        "subscribedToNewsLetter": false,
+        "specialty": "Pediatrics",
+        "price": 30,
+        "availableDates": [],
+        "supportingDocuments": [],
+        "doctorPermitID": "ASK18XAM",
+        "rating": 10,
+        "profileImageUrl": "https://images.pexels.com/photos/12495583/pexels-photo-12495583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      },
+      "date": "2023-06-15T05:00:00.000Z",
+      "id": 5
     }
   ]
 }

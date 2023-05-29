@@ -1,0 +1,24 @@
+<main class="dashboard bg-snow">
+  <app-greeting-content></app-greeting-content>
+  <div class="container">
+    <div class="bg-white border-0 rounded-2xl">
+      <div class="px-8 py-8">
+        <div class="space-y-4">
+          <div class="flex gap-2">
+            <img src="assets/dashboard/calendar-month-multimedia-svgrepo-com.svg" alt="Next appointments icon">
+            <h1 class="text-2xl">
+              {{ "dashboard.next-appointments-title" | translate}}
+            </h1>
+          </div>
+          <div>
+            <app-patient-next-appointments-card />
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</main>

@@ -8,7 +8,16 @@
       "notifications": "Notificaciones",
       "sign-out": "Cerrar sesión"
     },
-    "join-appointment": "Entrar a videoconferencia"
+    "join-appointment": "Entrar a videoconferencia",
+    "next-appointments-title": "Próximas citas médicas",
+    "date-label": "Fecha: ",
+    "hour-label": "Hora: ",
+    "appointments-history-title": "Historial de citas médicas",
+    "past-appointments-label": " citas médicas",
+    "chat-title": "Chat con tus contactos",
+    "contacts-label": "contactos",
+    "notifications-title": "Notificaciones",
+    "notifications-label": " nuevas notificaciones"
   },
   "auth": {
     "sign-in-title": "Inicio de sesión",

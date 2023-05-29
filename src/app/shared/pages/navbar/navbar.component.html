@@ -1,9 +1,9 @@
 <mat-toolbar class="bg-white flex justify-around items-center">
   <a [routerLink]="['/home']">
-    <img src="../assets/logo-medmeet.png" width="140px" alt="Medmeet Logo">
+    <img src="../assets/logo-medmeet.png" width="140px" alt="Medmeet Logo" class="hover:scale-95 duration-200">
   </a>
   <div class="flex justify center gap-4">
-    <button mat-flat-button color="accent" [routerLink]="['/book']">
+    <button mat-stroked-button color="primary" [routerLink]="['/book']">
       {{ "dashboard.navbar.book-appointment" | translate }}
     </button>
     <button color="primary" mat-mini-fab [matMenuTriggerFor]="menu">
