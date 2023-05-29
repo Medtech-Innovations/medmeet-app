@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Appointment } from '../../model/appointment';
+import { Appointment } from '../../../patient/model/appointment';
 import { DataService } from 'src/app/shared/services/data-service/data-service.service';
 import { interval, switchMap } from 'rxjs';
 
 @Component({
-  selector: 'app-patient-dashboard',
+  selector: 'app-main-dashboard',
   templateUrl: './patient-dashboard.component.html',
   styleUrls: ['./patient-dashboard.component.css']
 })
@@ -36,6 +36,6 @@ export class PatientDashboardComponent {
   }
 
   updateAppointment(id: number, item:Appointment ){
-    
+
   }
 }

@@ -52,7 +52,7 @@ import { CountrySelectorComponent } from './shared/pages/country-selector/countr
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguageSwitcherComponent } from './shared/pages/language-switcher/language-switcher.component';
 import { RecoverPasswordComponent } from './authentication/pages/recover-password/recover-password.component';
-import { PatientDashboardComponent } from './patient/pages/patient-dashboard/patient-dashboard.component';
+import { PatientDashboardComponent } from './shared/pages/main-dashboard/patient-dashboard.component';
 import { HelpDeskComponent } from './help-desk/pages/help-desk/help-desk.component';
 import { ChatComponent } from "./shared/pages/chat/chat.component";
 

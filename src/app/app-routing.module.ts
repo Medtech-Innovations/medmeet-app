@@ -6,7 +6,7 @@ import { RegisterComponent } from './authentication/pages/register/register.comp
 import { BookAppointmentComponent } from './patient/pages/book-appointment/book-appointment.component';
 import { ForgotPasswordComponent } from "./authentication/pages/forgot-password/forgot-password.component";
 import { RecoverPasswordComponent } from "./authentication/pages/recover-password/recover-password.component";
-import { PatientDashboardComponent } from './patient/pages/patient-dashboard/patient-dashboard.component';
+import { PatientDashboardComponent } from './shared/pages/main-dashboard/patient-dashboard.component';
 import { HelpDeskComponent } from "./help-desk/pages/help-desk/help-desk.component";
 import { ChatComponent } from "./shared/pages/chat/chat.component";
 
