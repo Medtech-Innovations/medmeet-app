@@ -8,6 +8,7 @@
       "notifications": "Notificaciones",
       "sign-out": "Cerrar sesión"
     },
+    "greeting": "Bienvenido a Medmeet ",
     "join-appointment": "Entrar a videoconferencia",
     "next-appointments-title": "Próximas citas médicas",
     "date-label": "Fecha: ",
@@ -90,8 +91,5 @@
   "chat": {
     "patient-header": "Comunícate con tu doctor",
     "doctor-header": "Comunícate con tu paciente"
-  },
-  "greeting": {
-    "text": "Bienvenido a Medmeet, "
   }
 }

@@ -8,6 +8,7 @@
       "notifications": "Notifications",
       "sign-out": "Sign out"
     },
+    "greeting": "Welcome to Medmeet ",
     "join-appointment": "Join Appointment",
     "next-appointments-title": "Next appointments",
     "date-label": "Date: ",
@@ -91,8 +92,5 @@
   "chat": {
     "patient-header": "Chat with doctors",
     "doctor-header": "Chat with patients"
-  },
-  "greeting": {
-    "text": "Welcome to Medmeet, "
   }
 }
