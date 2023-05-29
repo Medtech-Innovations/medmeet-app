@@ -1,25 +1,23 @@
 import { Component } from '@angular/core';
-import { Appointment } from '../../../patient/model/appointment';
-import { DataService } from 'src/app/shared/services/data-service/data-service.service';
-import { interval, switchMap } from 'rxjs';
+import {DataService} from "../../../shared/services/data-service/data-service.service";
+import {Appointment} from "../../model/appointment";
 
 @Component({
-  selector: 'app-main-dashboard',
-  templateUrl: './patient-dashboard.component.html',
-  styleUrls: ['./patient-dashboard.component.css']
+  selector: 'app-patient-next-appointments-card',
+  templateUrl: './patient-next-appointments-card.component.html',
+  styleUrls: ['./patient-next-appointments-card.component.css']
 })
-export class PatientDashboardComponent {
+export class PatientNextAppointmentsCardComponent {
   constructor(private appointmentService: DataService<Appointment>) {
   }
   appointmentsPath = 'http://localhost:3000/appointments';
   appointments: any = [];
 
   ngOnInit() {
-      this.appointmentService.getAll(this.appointmentsPath).subscribe(data => {
+    this.appointmentService.getAll(this.appointmentsPath).subscribe(data => {
       this.appointments = data;
     });
   }
-
   deleteAppointment(id: number){
     this.appointmentService.delete(id,this.appointmentsPath)
       .subscribe(
@@ -33,9 +31,5 @@ export class PatientDashboardComponent {
           console.log(`Error deleting ${id}: ${error.message}`);
         }
       );
-  }
-
-  updateAppointment(id: number, item:Appointment ){
-
   }
 }

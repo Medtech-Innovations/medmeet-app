@@ -8,7 +8,16 @@
       "notifications": "Notifications",
       "sign-out": "Sign out"
     },
-    "join-appointment": "Join Appointment"
+    "join-appointment": "Join Appointment",
+    "next-appointments-title": "Next appointments",
+    "date-label": "Date: ",
+    "hour-label": "Hour: ",
+    "appointments-history-title": "Appointments History",
+    "past-appointments-label": " past appointments",
+    "chat-title": "Chat with contacts",
+    "contacts-label": "contacts",
+    "notifications-title": "Notifications",
+    "notifications-label": " new notifications"
   },
   "auth": {
     "sign-in-title": "Log In",

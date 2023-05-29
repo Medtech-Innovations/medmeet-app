@@ -52,9 +52,11 @@ import { CountrySelectorComponent } from './shared/pages/country-selector/countr
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguageSwitcherComponent } from './shared/pages/language-switcher/language-switcher.component';
 import { RecoverPasswordComponent } from './authentication/pages/recover-password/recover-password.component';
-import { PatientDashboardComponent } from './shared/pages/main-dashboard/patient-dashboard.component';
+import { MainDashboardComponent } from './shared/pages/main-dashboard/main-dashboard.component';
 import { HelpDeskComponent } from './help-desk/pages/help-desk/help-desk.component';
 import { ChatComponent } from "./shared/pages/chat/chat.component";
+import { PatientNextAppointmentsCardComponent } from './patient/components/patient-next-appointments-card/patient-next-appointments-card.component';
+import { DoctorNextAppointmentsCardComponent } from './doctor/components/doctor-next-appointments-card/doctor-next-appointments-card.component';
 
 @NgModule({
   declarations: [
@@ -72,9 +74,11 @@ import { ChatComponent } from "./shared/pages/chat/chat.component";
     CountrySelectorComponent,
     LanguageSwitcherComponent,
     RecoverPasswordComponent,
-    PatientDashboardComponent,
+    MainDashboardComponent,
     HelpDeskComponent,
-    ChatComponent
+    ChatComponent,
+    PatientNextAppointmentsCardComponent,
+    DoctorNextAppointmentsCardComponent
   ],
   imports: [
     TranslateModule.forRoot({
