@@ -1,29 +1,15 @@
-<main class="book-appointment container">
-  <div class="flex justify-center items-center w-full my-4">
-    <div class="flex items-center gap-2">
-      <img class="w-8" src="./assets/medmeet-icon.png">
-      <h1 class="font-medium text-3xl">{{"booking.title" | translate}}</h1>
-    </div>
-  </div>
-
-
+<main class="px-4 py-4">
   <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>
-          {{ "booking.select-doctor-title" | translate}}
-        </ng-template>
+        <ng-template matStepLabel>{{ "booking.select-doctor-title" | translate}}</ng-template>
 
         <div class="filters space-y-2">
-          <h1 class="text-primary font-medium">
-            {{ "booking.filters" | translate}}
-          </h1>
+          <h1 class="text-primary font-medium">{{ "booking.filters" | translate}}</h1>
           <div class="flex space-x-6">
             <mat-form-field appearance="fill">
               <mat-label>{{ "auth.register.specialty-label" | translate }}</mat-label>
-              <mat-select>
-                <mat-option value="one">In progress</mat-option>
-              </mat-select>
+              <mat-select><mat-option value="one">In progress</mat-option></mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>{{ "booking.search-by-doctor" | translate}}</mat-label>
@@ -51,111 +37,65 @@
           </div>
         </div>
 
-        <div class="flex justify-center items-center w-full my-4">
-          <div class="flex items-center gap-2">
-            <h1 class="text-primary font-medium text-3xl">
-              {{ "booking.select-your-doctor" | translate}}
-            </h1>
-          </div>
-        </div>
-        <div class="flex justify-center items-center w-full my-4">
-          <div class="flex grid-cols-3 space-x-6">
-            <mat-card *ngFor="let doctor of doctors" class="max-w-md shadow-md">
-              <div class="flex flex-col px-6 py-6">
-                <div class="flex items-center space-x-6">
-                  <div class="h-40 w-40 rounded-full overflow-hidden">
-                    <img class="object-cover" src="{{ doctor.profileImageUrl }}" alt="Doctor's profile image">
+        <!-- Doctor selection -->
+        <div class="flex">
+          <div class="flex grid-cols-5 space-x-6">
+            <div *ngFor="let doctor of doctors" class="flex flex-col px-6 py-6 max-w-md rounded-xl border">
+                <div class="flex items-center space-x-2">
+                  <div class="h-20 w-20 rounded-full overflow-hidden object-cover">
+                    <img class="object-cover" [src]="doctor.profileImageUrl" alt="Doctor's profile image">
                   </div>
-                  <div class="flex-grow doctor-information">
-                    <ul>
-                      <li class="font-medium text-3xl"><h1>{{doctor.name}} {{doctor.lastName}}</h1></li>
-                      <li class="font-medium text-lg">{{doctor.specialty}}</li>
-                      <li>
-                        <span>{{"booking.rating" | translate}}:</span>
-                        {{doctor.rating}}
-                      </li>
-                      <li><a class="text-secondary" href="#">{{"booking.view-profile" | translate}}</a></li>
-                      <li>
-                        <span class="font-medium text-lg">{{"booking.price" | translate}}: {{doctor.price}}</span>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul>
+                    <li class="font-medium text-xl"><h1>{{doctor.name}} {{doctor.lastName}}</h1></li>
+                    <li class="text-primary">{{doctor.specialty}}</li>
+                    <li><a class="text-secondary" href="#"> {{"booking.view-profile" | translate}}<span>({{doctor.rating}}&#9733;)</span></a></li>
+                    <li class="font-medium">{{doctor.price}} USD</li>
+                  </ul>
                 </div>
-<!-- Apointment doctor ID -->
-                  <button
-                  mat-raised-button color="primary"
-                  matStepperNext
-                  (click)="updateAppointmentDoctor(doctor)">
-                    {{ "booking.book" | translate}}
-                  </button>
-                </div>
-            </mat-card>
+                <button mat-raised-button color="primary" matStepperNext (click)="updateAppointmentDoctor(doctor)"> {{ "booking.book" | translate}}</button>
+            </div>
           </div>
         </div>
       </form>
     </mat-step>
 
-
+    <!-- Appointment date -->
     <mat-step [stepControl]="secondFormGroup" label="Select date">
-      <form [formGroup]="secondFormGroup">
-        <div class="max-w-md">
-          <mat-form-field appearance="fill">
-            <mat-label>Angular forms</mat-label>
-            <input matInput [matDatepicker]="picker1"
-            [formControl]="date">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
+      <form [formGroup]="secondFormGroup" class="flex space-x-4">
+        <mat-card class="w-1/4">
+          <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+        </mat-card>
+        <div class="w-1/3">
+          <mat-form-field class="w-full">
+            <mat-label>
+              {{ selectedDate === null ? "Please select a date to continue" : "Date selected" }}
+            </mat-label>
+            <input matInput disabled :value={{selectedDate}}>
           </mat-form-field>
-<!-- Apointment date -->
-          <div>
-            {{"booking.selected-date" | translate}}<br>
-            <span class="text-primary font-medium">
-              {{selectedDate}}
-            </span>
+          <div class="flex gap-2">
+            <button  mat-raised-button color="primary" matStepperPrevious>{{"booking.back" | translate}}</button>
+            <button mat-raised-button color="primary" matStepperNext>{{"booking.next" | translate}}</button>
           </div>
-        </div>
-        <div class="space-x-2">
-          <button  mat-raised-button color="primary" matStepperPrevious>
-            {{"booking.back" | translate}}
-          </button>
-          <button
-          mat-raised-button
-          color="primary"
-          matStepperNext>
-            {{"booking.next" | translate}}
-          </button>
         </div>
       </form>
     </mat-step>
+
+    <!-- Payment -->
     <mat-step [stepControl]="thirdFormGroup" label="Select payment">
-      <form [formGroup]="thirdFormGroup">
-        <h1 class="text-primary font-medium">
-          {{"booking.payment" | translate}}
-        </h1>
+      <form [formGroup]="thirdFormGroup" class="justify-center ">
         <p>Building...</p>
-        <div class="space-y-2">
-          <div class="space-x-2">
-            <button  mat-raised-button color="primary" matStepperPrevious>
-              {{"booking.back" | translate}}
-            </button>
-            <button mat-raised-button color="primary" (click)="createAppointment()" matStepperNext>
-              {{ "booking.confirm-payment" | translate }}
-            </button>
-          </div>
+        <div class="flex gap-2">
+          <button mat-raised-button color="primary" matStepperPrevious>{{"booking.back" | translate}}</button>
+          <button mat-raised-button color="primary" (click)="createAppointment()" matStepperNext>{{ "booking.confirm-payment" | translate }}</button>
         </div>
       </form>
     </mat-step>
+
     <mat-step>
       <ng-template matStepLabel>Confirm</ng-template>
-      <p>
-        {{"booking.confirmation-text" | translate}}
-        <a class="text-secondary" [routerLink]="['/home']">
-          {{"booking.go-home" | translate}}
-        </a>
+      <p>{{"booking.confirmation-text" | translate}}
+        <a class="text-secondary" [routerLink]="['/home']">{{"booking.go-home" | translate}}</a>
       </p>
     </mat-step>
-
-
   </mat-stepper>
 </main>
