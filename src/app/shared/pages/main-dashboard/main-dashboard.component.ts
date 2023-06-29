@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Appointment } from '../../../patient/model/appointment';
-import { DataService } from 'src/app/shared/services/data-service/data-service.service';
+import { Appointment } from '../../model/appointment';
+import { DataService } from 'src/app/shared/services/data-service.service';
 
 @Component({
   selector: 'app-main-dashboard',

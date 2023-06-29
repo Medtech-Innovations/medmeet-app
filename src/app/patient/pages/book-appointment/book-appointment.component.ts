@@ -1,7 +1,9 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
-import { DataService } from 'src/app/shared/services/data-service/data-service.service';
-import { Appointment } from '../../model/appointment';
+import { Appointment } from '../../../shared/model/appointment';
+import {AppointmentsService} from "../../../shared/services/appointments.service";
+import {DoctorsService} from "../../../shared/services/doctors.service";
+import {UsersService} from "../../../shared/services/users.service";
 
 
 @Component({
@@ -22,11 +24,8 @@ export class BookAppointmentComponent {
   });
   isLinear = false;
 
-
-  doctorsPath = 'http://localhost:3000/doctors';
   doctors: any = [];
-
-  appointmentsPath = 'http://localhost:3000/appointments';
+  users: any = [];
   appointmentData: Appointment;
 
   date = new FormControl(new Date());
@@ -34,37 +33,41 @@ export class BookAppointmentComponent {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private doctorService: DataService<any>,
-    private appointmentService: DataService<Appointment>) {
+    private doctorService: DoctorsService,
+    private usersService: UsersService,
+    private appointmentService: AppointmentsService) {
       this.appointmentData = {} as Appointment;
     }
 
   ngOnInit() {
-    this.doctorService.getAll(this.doctorsPath).subscribe(data => {
+    this.doctorService.getAll().subscribe(data => {
       this.doctors = data;
     });
-    this.date.valueChanges.subscribe(value => {
-      this.updateAppointmentDate(value);
+    this.usersService.getAll().subscribe(data => {
+      this.users = data;
     });
   }
 
   updateAppointmentDoctor(doctor: any) {
-    this.appointmentData.doctor = doctor;
-  }
-
-  updateAppointmentDate(date: Date | null){
-    this.appointmentData.date = date;
-    console.log(date);
+    this.appointmentData.givenDoctorId = doctor.id;
   }
 
   createAppointment() {
-    this.appointmentService.create(this.appointmentData,this.appointmentsPath).
+    this.appointmentData.createdDate = new Date();
+    this.appointmentData.appointmentDate = this.selectedDate;
+    this.appointmentData.minutesDuration = 60;
+    this.appointmentData.appointmentSessionUrl = 'https://medmeet.netlify.app/';
+    this.appointmentData.appointmentPrescriptionUrl = 'https://medmeet.netlify.app/';
+    this.appointmentData.paymentId = 1;
+    this.appointmentData.userId = 1;
+    this.appointmentData.status = true;
+    this.appointmentService.create(this.appointmentData).
     subscribe((response: any) => {
       console.log('Appointment created successfully.');
     });
   }
 
-  getStars(rating: number): number[] {
-    return Array(rating).fill(0);
+  getUser(userId: any) {
+    return this.users.find((user: any) => user.id === userId);
   }
 }

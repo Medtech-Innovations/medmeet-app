@@ -9,6 +9,7 @@ import { RecoverPasswordComponent } from "./authentication/pages/recover-passwor
 import { MainDashboardComponent } from './shared/pages/main-dashboard/main-dashboard.component';
 import { HelpDeskComponent } from "./help-desk/pages/help-desk/help-desk.component";
 import { ChatComponent } from "./shared/pages/chat/chat.component";
+import {AppointmentsHistoryComponent} from "./patient/pages/appointments-history/appointments-history.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'book', component: BookAppointmentComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'help-desk', component: HelpDeskComponent},
+  { path: 'appointments/history', component: AppointmentsHistoryComponent },
   { path: 'home', component: MainDashboardComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

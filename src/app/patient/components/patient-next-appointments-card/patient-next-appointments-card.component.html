@@ -1,31 +1,30 @@
 <div class="flex space-x-4 overflow-x-auto">
-  <div *ngFor="let appointment of appointments" class="max-w-lg border rounded-2xl box-border w-80 h-auto"  >
-    <div class="flex flex-col px-6 py-6 space-y-2">
+  <div *ngFor="let appointment of appointments">
+    <div *ngIf="appointment.status == true" class="flex flex-col px-6 py-6 space-y-2 max-w-lg border rounded-2xl box-border w-80 h-auto">
       <div class="flex items-center space-x-4">
         <div class="h-20 w-20 rounded-full overflow-hidden object-cover">
-          <img class="object-cover" [src]="appointment.doctor.profileImageUrl" alt="Doctor's profile image">
+          <img class="object-cover" [src]="getUser(appointment.doctor.userId)?.profileImageUrl" alt="Doctor's profile image">
         </div>
         <div class="flex-grow">
           <ul>
             <li class="font-medium text-xl">
-              <h1>{{ appointment.doctor.name }} {{ appointment.doctor.lastName }}</h1>
+              <h1>{{ getUser(appointment.doctor.userId)?.firstName }} {{ getUser(appointment.doctor.userId)?.lastName }}</h1>
             </li>
-            <li class="text-contrast font-medium">{{ appointment.doctor.specialty }}</li>
+            <li class="text-contrast font-medium">{{ getDoctor(appointment.doctor.userId)?.specialty.name }}</li>
             <li>
               <span class="text-primary font-medium">{{ 'dashboard.date-label' | translate }}</span>
-              {{ appointment.date | date: 'yyyy-MM-dd' }}
+              {{ appointment.appointmentDate | date: 'yyyy-MM-dd' }}
             </li>
             <li>
               <span class="text-primary font-medium">{{ 'dashboard.hour-label' | translate }}</span>
-              {{ appointment.date | date: 'HH:mm' }}
+              {{ appointment.appointmentDate | date: 'HH:mm' }}
             </li>
           </ul>
         </div>
       </div>
-      <button mat-raised-button color="primary" (click)="deleteAppointment(appointment.id)">
+      <button mat-raised-button color="primary" (click)="joinAppointment(appointment.id)">
         {{ 'dashboard.join-appointment' | translate }}
       </button>
     </div>
   </div>
 </div>
-
