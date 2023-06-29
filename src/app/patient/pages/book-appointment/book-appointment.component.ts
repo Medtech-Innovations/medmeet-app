@@ -10,7 +10,7 @@ import { Appointment } from '../../model/appointment';
   styleUrls: ['./book-appointment.component.css']
 })
 export class BookAppointmentComponent {
-  selectedDate?:null;
+  selectedDate: null | Date = null;
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],
   });
@@ -62,5 +62,9 @@ export class BookAppointmentComponent {
     subscribe((response: any) => {
       console.log('Appointment created successfully.');
     });
+  }
+
+  getStars(rating: number): number[] {
+    return Array(rating).fill(0);
   }
 }
