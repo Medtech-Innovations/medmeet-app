@@ -57,6 +57,7 @@ import { HelpDeskComponent } from './help-desk/pages/help-desk/help-desk.compone
 import { ChatComponent } from "./shared/pages/chat/chat.component";
 import { PatientNextAppointmentsCardComponent } from './patient/components/patient-next-appointments-card/patient-next-appointments-card.component';
 import { DoctorNextAppointmentsCardComponent } from './doctor/components/doctor-next-appointments-card/doctor-next-appointments-card.component';
+import { AppointmentsHistoryComponent } from './patient/pages/appointments-history/appointments-history.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { DoctorNextAppointmentsCardComponent } from './doctor/components/doctor-
     HelpDeskComponent,
     ChatComponent,
     PatientNextAppointmentsCardComponent,
-    DoctorNextAppointmentsCardComponent
+    DoctorNextAppointmentsCardComponent,
+    AppointmentsHistoryComponent
   ],
   imports: [
     TranslateModule.forRoot({

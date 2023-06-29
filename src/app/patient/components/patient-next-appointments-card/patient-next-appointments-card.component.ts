@@ -31,21 +31,6 @@ export class PatientNextAppointmentsCardComponent {
     });
   }
 
-  deleteAppointment(id: number){
-    this.appointmentService.delete(id)
-      .subscribe(
-        () => {
-          console.log(`${id} deleted successfully`);
-          this.appointmentService.getAll().subscribe(data => {
-            this.appointments = data;
-          });
-        },
-        (error) => {
-          console.log(`Error deleting ${id}: ${error.message}`);
-        }
-      );
-  }
-
   joinAppointment(id: number){
     let updatedAppointment = this.appointments.find((appointment: any) => appointment.id === id);
     updatedAppointment.status = false;
