@@ -43,12 +43,12 @@
             <div *ngFor="let doctor of doctors" class="flex flex-col px-6 py-6 max-w-md rounded-xl border">
                 <div class="flex items-center space-x-2">
                   <div class="h-20 w-20 rounded-full overflow-hidden object-cover">
-                    <img class="object-cover" [src]="doctor.profileImageUrl" alt="Doctor's profile image">
+                    <img class="object-cover" [src]="getUser(doctor.userId)?.profileImageUrl" alt="Doctor's profile image">
                   </div>
                   <ul>
-                    <li class="font-medium text-xl"><h1>{{doctor.name}} {{doctor.lastName}}</h1></li>
-                    <li class="text-primary">{{doctor.specialty}}</li>
-                    <li><a class="text-secondary" href="#"> {{"booking.view-profile" | translate}}<span>({{doctor.rating}}&#9733;)</span></a></li>
+                    <li class="font-medium text-xl">{{ getUser(doctor.userId)?.firstName + ' ' + getUser(doctor.userId)?.lastName }}</li>
+                    <li class="text-primary">{{doctor.specialty.name}}</li>
+                    <li><a class="text-secondary" href="#"> {{"booking.view-profile" | translate}}<span>({{doctor.stars}}&#9733;)</span></a></li>
                     <li class="font-medium">{{doctor.price}} USD</li>
                   </ul>
                 </div>
