@@ -10,6 +10,6 @@ export class UsersService extends DataService<User> {
 
   constructor(http: HttpClient) {
     super(http);
-    this.basePath = 'http://localhost:8105/api/v1/users';
+    this.basePath = 'https://medmeet-api-production.up.railway.app/api/v1/users';
   }
 }
