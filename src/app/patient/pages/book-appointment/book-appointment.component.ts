@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import { Appointment } from '../../../shared/model/appointment';
+import { Payment } from '../../../shared/model/payment';
 import {AppointmentsService} from "../../../shared/services/appointments.service";
 import {DoctorsService} from "../../../shared/services/doctors.service";
 import {UsersService} from "../../../shared/services/users.service";
-
+import { PaymentService} from "../../../shared/services/payment.service";
 
 @Component({
   selector: 'app-book-appointment',
@@ -13,6 +14,7 @@ import {UsersService} from "../../../shared/services/users.service";
 })
 export class BookAppointmentComponent {
   selectedDate: null | Date = null;
+  selectedDoctor: any = null;
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],
   });
@@ -27,6 +29,7 @@ export class BookAppointmentComponent {
   doctors: any = [];
   users: any = [];
   appointmentData: Appointment;
+  paymentData: Payment;
 
   date = new FormControl(new Date());
   serializedDate = new FormControl(new Date().toISOString());
@@ -35,9 +38,12 @@ export class BookAppointmentComponent {
     private _formBuilder: FormBuilder,
     private doctorService: DoctorsService,
     private usersService: UsersService,
-    private appointmentService: AppointmentsService) {
+    private appointmentService: AppointmentsService,
+    private paymentService: PaymentService) {
       this.appointmentData = {} as Appointment;
+      this.paymentData = {} as Payment;
     }
+
 
   ngOnInit() {
     this.doctorService.getAll().subscribe(data => {
@@ -49,6 +55,7 @@ export class BookAppointmentComponent {
   }
 
   updateAppointmentDoctor(doctor: any) {
+    this.selectedDoctor = doctor;
     this.appointmentData.givenDoctorId = doctor.id;
   }
 
@@ -64,6 +71,22 @@ export class BookAppointmentComponent {
     this.appointmentService.create(this.appointmentData).
     subscribe((response: any) => {
       console.log('Appointment created successfully.');
+    });
+  }
+
+  createPayment() {
+    this.paymentData.createdDate = new Date();
+    this.paymentData.amount = this.selectedDoctor.price;
+    let descriptionControl = this.thirdFormGroup.get('description');
+    this.paymentData.appointment = this.appointmentData;
+    if (descriptionControl !== null) {
+      this.paymentData.description = descriptionControl.value;
+    } else {
+      this.paymentData.description = 'No description';
+    }
+
+    this.paymentService.create(this.paymentData).subscribe((response: any) => {
+      console.log('Payment created successfully.');
     });
   }
 

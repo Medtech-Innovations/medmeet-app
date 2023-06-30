@@ -90,7 +90,17 @@
     "back": "Back",
     "confirm-payment":"Confirm payment",
     "booked": "Booked!",
-    "next": "Next"
+    "next": "Next",
+
+
+    "payment-info": {
+      "title": "Payment Information: ",
+      "specialty": "The Specialty of the doctor is: ",
+      "price": "The price of the appointment is: ",
+      "description-title": "Description",
+      "description": "You can enter a description in the payment information:"
+    }
+
   },
   "chat": {
     "patient-header": "Chat with doctors",

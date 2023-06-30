@@ -89,7 +89,16 @@
     "back": "Atrás",
     "next": "Siguiente",
     "confirm-appointment":"Confirmar pago",
-    "booked": "¡Reservado!"
+    "booked": "¡Reservado!",
+
+    "payment-info": {
+      "title": "Información de pago: ",
+      "specialty": "La especialidad del doctor es: ",
+      "price": "El precio de la consulta es: ",
+      "description-title": "Descripción",
+      "description": "Puede añadir una descripción para en la informacion de pago: "
+    }
+
   },
   "chat": {
     "patient-header": "Comunícate con tu doctor",
