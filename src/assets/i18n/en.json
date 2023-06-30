@@ -6,6 +6,7 @@
       "my-profile": "My Profile",
       "chats": "Chats",
       "notifications": "Notifications",
+      "payments-history": "Payments History",
       "sign-out": "Sign out"
     },
     "greeting": "Welcome to Medmeet ",
@@ -14,6 +15,8 @@
     "date-label": "Date: ",
     "hour-label": "Hour: ",
     "appointments-history-title": "Appointments History",
+    "payments-history-title": "Payment History",
+    "payments-history-label": "You can check the information of the payments you have made",
     "past-appointments-label": " past appointments",
     "chat-title": "Chat with contacts",
     "contacts-label": "contacts",

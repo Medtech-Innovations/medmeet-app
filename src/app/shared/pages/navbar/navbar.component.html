@@ -22,6 +22,11 @@
       <button mat-menu-item>
         {{ "dashboard.navbar.notifications" | translate }}
       </button>
+      <a [routerLink]="['payments/history']">
+      <button mat-menu-item>
+        {{ "dashboard.navbar.payments-history" | translate }}
+      </button>
+      </a>
       <button mat-menu-item>
         {{ "dashboard.navbar.sign-out" | translate }}
       </button>

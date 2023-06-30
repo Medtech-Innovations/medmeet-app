@@ -37,7 +37,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatTableModule} from "@angular/material/table";
 
-
 // Components
 import { LoginComponent } from './authentication/pages/login/login.component';
 import { RegisterComponent } from './authentication/pages/register/register.component';
@@ -59,6 +58,7 @@ import { ChatComponent } from "./shared/pages/chat/chat.component";
 import { PatientNextAppointmentsCardComponent } from './patient/components/patient-next-appointments-card/patient-next-appointments-card.component';
 import { DoctorNextAppointmentsCardComponent } from './doctor/components/doctor-next-appointments-card/doctor-next-appointments-card.component';
 import { AppointmentsHistoryComponent } from './patient/pages/appointments-history/appointments-history.component';
+import { PaymentHistoryComponent } from './payment/pages/payment-history/payment-history.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +81,8 @@ import { AppointmentsHistoryComponent } from './patient/pages/appointments-histo
     ChatComponent,
     PatientNextAppointmentsCardComponent,
     DoctorNextAppointmentsCardComponent,
-    AppointmentsHistoryComponent
+    AppointmentsHistoryComponent,
+    PaymentHistoryComponent
   ],
     imports: [
         TranslateModule.forRoot({
