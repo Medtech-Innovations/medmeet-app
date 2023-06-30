@@ -6,6 +6,7 @@
       "my-profile": "Mi Perfil",
       "chats": "Chats",
       "notifications": "Notificaciones",
+      "payments-history": "Historial de pagos",
       "sign-out": "Cerrar sesión"
     },
     "greeting": "Bienvenido a Medmeet ",
@@ -14,6 +15,8 @@
     "date-label": "Fecha: ",
     "hour-label": "Hora: ",
     "appointments-history-title": "Historial de citas médicas",
+    "payments-history-title": "Historial de pagos",
+    "payments-history-label": "Puede consultar la información de los pagos que ha realizado",
     "past-appointments-label": " citas médicas",
     "chat-title": "Chat con tus contactos",
     "contacts-label": "contactos",
@@ -86,7 +89,16 @@
     "back": "Atrás",
     "next": "Siguiente",
     "confirm-appointment":"Confirmar pago",
-    "booked": "¡Reservado!"
+    "booked": "¡Reservado!",
+
+    "payment-info": {
+      "title": "Información de pago: ",
+      "specialty": "La especialidad del doctor es: ",
+      "price": "El precio de la consulta es: ",
+      "description-title": "Descripción",
+      "description": "Puede añadir una descripción para en la informacion de pago: "
+    }
+
   },
   "chat": {
     "patient-header": "Comunícate con tu doctor",

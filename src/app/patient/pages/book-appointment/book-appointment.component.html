@@ -81,10 +81,29 @@
     <!-- Payment -->
     <mat-step [stepControl]="thirdFormGroup" label="Select payment">
       <form [formGroup]="thirdFormGroup" class="justify-center ">
-        <p>Building...</p>
+        <div class="doctor-info">
+          <h1 class="text-primary text-2xl font-medium">{{"booking.payment-info.title" | translate}}</h1>
+
+          <p class="font-medium">{{"booking.payment-info.specialty" | translate}}
+            <span class="text-secondary font-medium">{{ selectedDoctor?.specialty.name }}</span></p>
+
+          <p class="font-medium">{{"booking.payment-info.price" | translate}}
+            <span class="text-secondary font-medium">{{ selectedDoctor?.price}} USD</span></p>
+          <div>
+            <p class="font-medium">{{"booking.payment-info.description" | translate}} </p>
+              <br>
+              <mat-form-field class="">
+                <mat-label>Description</mat-label>
+                <input type="text" matInput placeholder="" formControlName="description">
+              </mat-form-field>
+          </div>
+        </div>
+
         <div class="flex gap-2">
           <button mat-raised-button color="primary" matStepperPrevious>{{"booking.back" | translate}}</button>
-          <button mat-raised-button color="primary" (click)="createAppointment()" matStepperNext>{{ "booking.confirm-payment" | translate }}</button>
+          <button mat-raised-button color="primary" (click)="createAppointment(); createPayment()" matStepperNext>
+            {{ "booking.confirm-payment" | translate }}
+          </button>
         </div>
       </form>
     </mat-step>

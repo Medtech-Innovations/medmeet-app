@@ -10,6 +10,7 @@ import { MainDashboardComponent } from './shared/pages/main-dashboard/main-dashb
 import { HelpDeskComponent } from "./help-desk/pages/help-desk/help-desk.component";
 import { ChatComponent } from "./shared/pages/chat/chat.component";
 import {AppointmentsHistoryComponent} from "./patient/pages/appointments-history/appointments-history.component";
+import {PaymentHistoryComponent} from "./payment/pages/payment-history/payment-history.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'chat', component: ChatComponent },
   { path: 'help-desk', component: HelpDeskComponent},
   { path: 'appointments/history', component: AppointmentsHistoryComponent },
+  { path: 'payments/history', component: PaymentHistoryComponent },
   { path: 'home', component: MainDashboardComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
