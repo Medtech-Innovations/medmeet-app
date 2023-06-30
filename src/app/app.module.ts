@@ -35,6 +35,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatTableModule} from "@angular/material/table";
 
 
 // Components
@@ -82,42 +83,43 @@ import { AppointmentsHistoryComponent } from './patient/pages/appointments-histo
     DoctorNextAppointmentsCardComponent,
     AppointmentsHistoryComponent
   ],
-  imports: [
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-      }
-    }),
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    MatInputModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatTabsModule,
-    MatDatepickerModule,
-    MatButtonToggleModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatDividerModule,
-    MatSnackBarModule,
-    MatProgressBarModule,
-    MatNativeDateModule,
-    MatListModule,
-    MatMenuModule,
-    MatStepperModule,
-    MatCardModule,
-    ReactiveFormsModule,
-    MatToolbarModule
-  ],
+    imports: [
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
+        HttpClientModule,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        MatInputModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatTabsModule,
+        MatDatepickerModule,
+        MatButtonToggleModule,
+        MatCheckboxModule,
+        MatChipsModule,
+        MatRadioModule,
+        MatSelectModule,
+        MatDividerModule,
+        MatSnackBarModule,
+        MatProgressBarModule,
+        MatNativeDateModule,
+        MatListModule,
+        MatMenuModule,
+        MatStepperModule,
+        MatCardModule,
+        ReactiveFormsModule,
+        MatToolbarModule,
+        MatTableModule
+    ],
   providers: [
 
   ],
