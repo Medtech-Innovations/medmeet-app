@@ -13,8 +13,8 @@ export class PaymentHistoryComponent {
   ) {}
   displayedColumns: string[] = [
     'id',
-    'paymentDate',
-    'paymentTime',
+    // 'paymentDate',
+    // 'paymentTime',
     'paymentAmount',
     'paymentDescription'
   ];

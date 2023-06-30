@@ -23,6 +23,7 @@ export class BookAppointmentComponent {
   });
   thirdFormGroup = this._formBuilder.group({
     thirdCtrl: ['', Validators.required],
+    description: ['']
   });
   isLinear = false;
 
@@ -77,18 +78,18 @@ export class BookAppointmentComponent {
   createPayment() {
     this.paymentData.createdDate = new Date();
     this.paymentData.amount = this.selectedDoctor.price;
-    let descriptionControl = this.thirdFormGroup.get('description');
+    let descriptionControl = this.thirdFormGroup.get("description")?.value;
     this.paymentData.appointment = this.appointmentData;
-    if (descriptionControl !== null) {
-      this.paymentData.description = descriptionControl.value;
+    if (typeof descriptionControl !== 'undefined' && descriptionControl !== null) {
+      this.paymentData.description = descriptionControl;
     } else {
       this.paymentData.description = 'No description';
     }
-
     this.paymentService.create(this.paymentData).subscribe((response: any) => {
       console.log('Payment created successfully.');
     });
   }
+
 
   getUser(userId: any) {
     return this.users.find((user: any) => user.id === userId);
